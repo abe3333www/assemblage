@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+<!-- <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"> -->
+  <meta charset="utf-8">
+  <meta name="viewport"    content="width=device-width">
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/common/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css">
+  <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <?php wp_head(); ?>
+</head>
+
+<?php if(is_front_page()) : ?>
+<body class="withMV">
+<?php elseif(is_page('product')|| page_is_ancestor_of('product')) : ?>
+<body class="withMVwht">
+<?php else : ?>
+<body class="">
+<?php endif; ?>
+  <div class="addLine lineBtn">
+    <a href="https://line.me/R/ti/p/@872qnsdk#~" target="_blank">Assemblage Club LINE公式アカウントはこちら</a>
+  </div>
+  <!-- HEADER -->
+  <header class="hd ffEn">
+    <div class="hd__wrap">
+      <a class="hd__logo" href="<?php echo site_url(); ?>">
+        <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_hd_wht.png" alt=""></p>
+        <p class="hd__logo--txt">Assemblage Club</p>
+      </a>
+
+      <?php if(is_front_page() ): ?>
+      <a class="hd__service sp" href="#TOP-SURVICE" target="_blank">Service</a>
+      <?php else : ?>
+      <a class="hd__service sp" href="<?php echo site_url(); ?>/#TOP-SURVICE" target="_blank">Service</a>
+      <?php endif; ?>
+
+      <div class="humBtn"><span></span></div>
+      <nav class="hd__nav">
+        <ul class="hd__nav--ul">
+          <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/">Top</a></li>
+          <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/product/assemblage_club01_2/">Product</a></li>
+          <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/news/">News</a></li>
+          <?php if(is_front_page() ): ?>
+          <li class="hd__nav--li pc"><a class="hd__nav--li--link" href="#TOP-SURVICE">Service</a></li>
+          <?php else : ?>
+          <li class="hd__nav--li pc"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/#TOP-SURVICE">Service</a></li>
+          <?php endif; ?>
+          <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
+          <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/cooperation/">協力酒蔵</a></li>
+          <li class="hd__nav--li">
+            <a class="hd__nav--li--link login" href="https://assemblage-club.myshopify.com" target="_blank">
+              <img class="login__icon pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon_blank_wht.svg" alt="">
+              <img class="login__iconSp sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/icon_blank_wht.svg" alt="">
+              <div class="login__inr">
+                <span class="login__main">Online Shop</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <p class="hd__nav--line sp"><a class="hd__nav--line--link mincho" href="" target="_blank">Assemblage Club 公式LINE@</a></p>
+        <p class="hd__nav--copy sp mincho">M KYOTO Online Store</p>
+      </nav>
+    </div>
+  </header>
+  <!-- //HEADER -->
+
+  <section id="LINE-ADD" class="lineAdd">
+    <div class="lineAdd__wrap">
+      <div class="lineAdd__blk">
+        <p class="lineAdd__blk--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_hd_blk.png" alt=""></p>
+        <p class="lineAdd__blk--logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/mv_logo.svg" alt="Assemblage Club"></p>
+        <p class="lineAdd__blk--lead">さあ、世界の美⾷が貴方を待っています<br>ともに⼤航海をはじめましょう</p>
+        <a class="lineAdd__blk--qr" href="https://line.me/R/ti/p/@872qnsdk#~" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/qrcord.png" alt=""></a>
+        <p class="lineAdd__blk--txt">QRコードをスキャンすると<br>LINEの友だちに追加されます</p>
+      </div>
+      <div class="lineAdd__close">CLOSE<span class="lineAdd__close--box"></span></div>
+    </div>
+    <div class="lineAdd__bg"></div>
+  </section>

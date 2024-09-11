@@ -1,0 +1,63 @@
+$maincol: #000;//フォントカラー
+$subcol: #c80000; //サブカラー
+$accol: #999;  //アクセントカラー
+
+$linkcol: #f9e707; //リンクカラー
+
+$bgcol: #fff; //背景色
+
+$basefs: 1.6rem; //PCベースフォント
+$basefs-sp: 1.4rem; //スマホベースフォント
+
+
+
+
+// tob
+$txtGray1: #5e5d5d;
+$txtGray2: #707070;
+$txtGray3: #666666;
+
+$txtBlk1: #222;
+$txtBlk2: #404040;
+
+$bgBeige: #eee9de;
+// $bgBeige: #f7f3e9;
+
+
+
+
+
+// ベースフォントを変えたい場合は、以下のコメントアウトを入れ替える($font = ベースフォント)
+
+//$font: "Noto Sans JP";
+//@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese');
+
+//$font: 'M PLUS 1p';
+//@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap&subset=japanese');
+
+$font: YuGothic,'Yu Gothic',"ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ","ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+$mincho: "游明朝", YuMincho, 'Kozuka Mincho Pro', 'Kozuka Mincho Std', '小塚明朝 Pro R', "ＭＳ Ｐ明朝", "MS PMincho","ヒラギノ明朝 ProN W3",  "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho",serif;
+
+$ffEn: 'Libre Baskerville', serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+$noto_serif: "Noto Serif JP", serif;
+// $hiragino: "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ","ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+$hiragino: "Hiragino Sans","ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ","ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+
+
+.mincho {
+  font-family: $mincho;
+}
+.ffEn {
+  font-family: $ffEn;
+}
+
+// ウィンドウ幅自動切換え用
+
+$fullWidth: 1280px; // 最大幅
+$outerWidth: 1040px;// 中間幅
+$inrWidth: 780px;  // 最小幅
+
+$minWidth: 834px;//Smartphone Breakpoint

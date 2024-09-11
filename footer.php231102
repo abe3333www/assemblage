@@ -1,0 +1,37 @@
+    <!-- FOOTER -->
+    <footer class="ft">
+    <div class="ft__wrap">
+      <div class="ft__lft">
+        <a class="ft__lft--logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_ft.png" alt="Assemblage Club"></a>
+        <!-- <p class="ft__lft--copy">@ M KYOTO Online Store</p> -->
+        <ul class="ft__lft--ul">
+          <li class="ft__lft--li"><a class="ft__lft--li--blank" href="https://assemblage-club.myshopify.com/pages/userpolicy" target="_blank">利⽤規約</a></li>
+          <li class="ft__lft--li"><a class="ft__lft--li--blank" href="https://assemblage-club.myshopify.com/pages/tokushoho" target="_blank">特定商法取引表記</a></li>
+          <li class="ft__lft--li"><a class="ft__lft--li--blank" href="https://assemblage-club.myshopify.com/pages/privacypolicy" target="_blank">プライバシーポリシー</a></li>
+        </ul>
+        <p class="ft__lft--note pc">20歳未満の飲酒は法律で禁止されています。20歳未満への酒類の販売はいたしません。</p>
+        <p class="ft__lft--note pc" style="margin-top: 0">令和４年度⽇本産酒類海外展開⽀援事業費補助⾦（ブランド化・酒蔵ツーリズム補助⾦）（取得⽇：令和4年9⽉28⽇）</p>
+      </div>
+      <div class="ft__rgt">
+        <a class="ft__rgt--totop" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/btn_totop.svg" alt="to top"></a>
+        <a class="ft__rgt--contact" href="<?php echo site_url(); ?>/contact/">お問い合わせはこちら</a>
+        <div class="ft__rgt--txt">
+          <p class="ft__rgt--txt--name">株式会社リーフ・パブリケーションズ</p>
+          <p class="ft__rgt--txt--mail">&lt;取材に関するお問い合わせ&gt; <a href="mailto:info@sakeworld.jp">info@sakeworld.jp</a></p>
+        </div>
+        <p class="ft__rgt--note sp">未成年の飲酒は法律で禁止されています。未成年への酒類の販売はいたしません。</p>
+        <p class="ft__rgt--note sp" style="margin-top: 0">令和４年度⽇本産酒類海外展開⽀援事業費補助⾦（ブランド化・酒蔵ツーリズム補助⾦）（取得⽇：令和4年9⽉28⽇）</p>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js" charset="utf-8"></script>
+
+  <!-- //FOOTER -->
+<?php wp_footer(); ?>
+</body>
+</html>

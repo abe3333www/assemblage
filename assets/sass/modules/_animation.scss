@@ -1,0 +1,188 @@
+@charset "utf-8";
+.iv,.ivo{
+	visibility: hidden;
+}
+// アニメーションのカクつきを抑える
+.smoothly {
+	will-change: top, left, opacity, margin, padding, width, height, transform;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.animeBox {
+	overflow: hidden;
+}
+
+.zoomOut {
+	transform: scale(1.2);
+	transform-origin: center;
+	animation: animate-zoomOut 1.5s ease-in-out forwards;
+}
+.topColumn .swiper-slide-active img {
+	animation: animate-zoomOut 3.5s ease-in-out forwards;
+}
+
+// ふわっ
+.fuwa {
+	opacity: 0;
+	animation: animate-fadeIn 0.5s forwards;
+}
+.fuwaUp {
+	opacity: 0;
+	animation: animate-fadeInUp 0.5s forwards;
+}
+.fuwaUp_tocMv {
+	opacity: 0;
+	animation: 2s animate-fadeInUp_tocMv 3s forwards;
+}
+.fuwaDown {
+	opacity: 0;
+	animation: animate-fadeInDown 0.5s forwards;
+}
+.fuwaLft {
+	opacity: 0;
+	animation: animate-fadeInLft 0.5s forwards;
+}
+.fuwaLft_tob {
+	opacity: 0;
+	animation: 1.3s animate-fadeInLft_tob 0.7s forwards;
+}
+.fuwaLftRotate_tob {
+	opacity: 0;
+	animation: 1.3s animate-fadeInLftRotate_tob 0.7s forwards;
+}
+.fuwaRgt {
+	opacity: 0;
+	animation: animate-fadeInRgt 0.5s forwards;
+}
+.fuwaRgt_tob {
+	opacity: 0;
+	animation: 1.3s animate-fadeInRgt_tob 0.7s linear forwards;
+}
+.fuwaRgtBtm_tob {
+	opacity: 0;
+	animation: 1.3s animate-fadeInRgtBtm_tob 0.7s linear forwards;
+}
+
+// ふわ----ん(水中っぽく)
+.fuwaaan {
+	opacity: 0;
+	animation: animate-fadeInBlah 1s ease-in forwards;
+}
+.fuwaaanUp {
+	opacity: 0;
+	animation: animate-fadeInBlahUp 1s ease-in forwards;
+}
+.fuwaaanDown {
+	opacity: 0;
+	animation: animate-fadeInBlahDown 1s ease-in forwards;
+}
+
+// ぷかぷか
+.puka1 {
+	animation: animate-puka1 5s linear infinite;
+}
+.puka2 {
+	animation: animate-puka 5s linear infinite;
+}
+
+
+// ぽよん
+.scaleUp { transform: scale(0.7); animation: animate-scaleUp .8s forwards; }
+
+
+
+
+/* ========================================
+ keyframes
+ ======================================== */
+ @keyframes animate-zoomOut {
+	from { transform: scale(1.2); }
+	to   { transform: scale(1); }
+}
+ 
+// ふわっ
+@keyframes animate-fadeIn{
+	from { opacity: 0; }
+	to { opacity: 1;  }
+}
+@keyframes animate-fadeInDown{
+	from { opacity: 0; transform: translate(0,-20px); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInUp{
+	from { opacity: 0; transform: translate(0,20px); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInUp_tocMv{
+	from { opacity: 0; transform: translate(0,10px); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInLft{
+	from { opacity: 0; transform: translate(-20px,0); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInLft_tob{
+	from { opacity: 0; transform: translate(-200px,0); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInLftRotate_tob{
+	from { opacity: 0; transform: translate(-200px,0) rotate(-90deg); }
+	to { opacity: 1; transform: translate(0) rotate(0deg);  }
+}
+@keyframes animate-fadeInRgt{
+	from { opacity: 0; transform: translate(20px,0); }
+	to { opacity: 1; transform: translate(0);  }
+}
+@keyframes animate-fadeInRgt_tob{
+	from { opacity: 0; transform: translate(200px,100px) rotate(-90deg); }
+	to { opacity: 1; transform: translate(0) rotate(0deg);  }
+}
+@keyframes animate-fadeInRgtBtm_tob{
+	from { opacity: 0; transform: translate(200px,100px) rotate(-90deg); }
+	to { opacity: 1; transform: translate(0) rotate(0deg);  }
+}
+// ふわ----ん(水中っぽく)
+@keyframes animate-fadeInBlah{
+	from { opacity: 0; filter: blur(20px); }
+	to { opacity: 1; filter: blur(0);   }
+}
+@keyframes animate-fadeInBlahUp{
+	from { opacity: 0; filter: blur(20px); transform: translate(0,20px); }
+	to { opacity: 1; filter: blur(0); transform: translate(0,0);   }
+}
+@keyframes animate-fadeInBlahDown{
+	from { opacity: 0; filter: blur(20px); transform: translate(0,-20px); }
+	to { opacity: 1; filter: blur(0); transform: translate(0,0);   }
+}
+
+// ぷかぷか
+@keyframes animate-puka1{
+	from { transform:rotate(0) translate(0); }
+	25% { transform:rotate(.3deg) translate(0, -3px); }
+	75% { transform:rotate(-.3deg) translate(0, 3px);;}
+	to {transform:rotate(0) translate(0); }
+}
+@keyframes animate-puka{
+	from { transform:rotate(0) translate(0); }
+	25% { transform:rotate(1deg) translate(0, -3px); }
+	75% { transform:rotate(-1deg) translate(0, 3px);;}
+	to {transform:rotate(0) translate(0); }
+}
+@keyframes animate-rotate{
+	from { transform:rotate(0) translate(0); }
+	to {transform:rotate(360deg) translate(0); }
+}
+
+
+
+
+
+
+@keyframes animate-scaleUp {
+	0%  { transform: scale(0.7) translate(0, 0); }
+	50% { transform: scale(0.98, 0.9) translate(0, 5px);opacity: 1; }
+	65% { transform: scale(1.02, 1.0) translate(0, 8px); }
+	77% {transform: scale(0.98, 1.05) translate(0, -8px); }
+	90% { transform: scale(1.0, 0.9) translate(0, 5px); }
+	100% { transform: scale(1.0, 1.0) translate(0, 0);opacity: 1;}
+}

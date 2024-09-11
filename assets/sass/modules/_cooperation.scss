@@ -1,0 +1,150 @@
+@charset "utf-8";
+@import "base/_codeset.scss";
+
+/* ========================================
+ Cooperation
+ ======================================== */
+header {
+    // display: none;
+}
+footer {
+    // display: none;
+}
+
+.pageCooperation {
+    &__mainTtl {
+        font-size: 3.5rem;
+        padding-top: 5px;
+    }
+    &__blk {
+        display: flex;
+        align-items: flex-start;
+        &:not(:first-of-type) {
+            margin-top: 76px;
+        }
+        &--imgArea {
+            width: 200px;
+            &--img {
+                display: block;
+                margin: 0 auto;
+            }
+            &--link {
+                display: block;
+                font-size: 1.4rem;
+                margin-top: 35px;
+                text-align: center;
+                white-space: nowrap;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &--txtArea {
+            width: calc(100% - 200px);
+            padding-left: 50px;
+            &--ttl {
+                font-size: 2.2rem;
+                line-height: 1;
+            }
+            &--txt {
+                font-size: 1.4rem;
+                margin-top: 15px;
+                line-height: 1.72;
+            }
+            .peaple {
+                display: flex;
+                align-items: center;
+                margin-top: 40px;
+                &__profile {
+                    flex-shrink: 0;
+                    width: 170px;
+                    text-align: center;
+                    margin-right: 40px;
+                    &--txt {
+                        font-size: 1.2rem;
+                        line-height: 1.5;
+                        margin-top: 10px;
+                    }
+                }
+                &__column {
+                    font-size: 1.4rem;
+                    line-height: 1.7;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 834px) {
+    .pageCooperation {
+        &__mainTtl {
+            font-size: 1.9rem;
+            margin-bottom: 40px;
+        }
+        &__blk {
+            flex-direction: column;
+            align-items: center;
+            &:not(:first-of-type) {
+                margin-top: 35px;
+            }
+            &--imgArea {
+                width: 153px;
+                &--img {
+                    
+                }
+                &--link {
+                    
+                    &:hover {
+                        
+                    }
+                }
+            }
+            &--txtArea {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 27px;
+                &--ttlFlex {
+                    display: flex;
+                    align-items: center;
+                }
+                &--ttl {
+                    font-size: 1.6rem;
+                }
+                &--link {
+                    font-size: 1.1rem;
+                    display: block;
+                    margin-left: auto;
+                    padding-top: 3px;
+                }
+                &--txt {
+                    font-size: 1.4rem;
+                    line-height: 1.93;
+                    margin-top: 12px;
+                }
+                .peaple {
+                    display: block;
+                    margin-top: 30px;
+                    &__profile {
+                        width: 90%;
+                        text-align: center;
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                        &--img {
+                            display: block;
+                            width: 170px;
+                            margin: 0 auto;
+                        }
+                        &--txt {
+                            font-size: 1.2rem;
+                            line-height: 1.5;
+                        }
+                    }
+                    &__column {
+                        font-size: 1.4rem;
+                        line-height: 1.7;
+                    }
+                }
+            }
+        }
+    }
+}

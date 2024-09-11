@@ -1,0 +1,236 @@
+@charset "utf-8";
+@import "base/_codeset.scss";
+
+#SINGLE {
+    padding-top: 124px;
+    padding-left: 225px;
+    padding-right: 185px;
+    padding-bottom: 200px;
+    margin-inline: auto;
+    width: calc(100% - 50px);
+    .singleNews {
+        margin-inline: auto;
+        padding-left: 0px;
+        margin-inline: auto;
+        max-width: 780px;
+        &__head {
+            &--thm {
+            }
+            .ttl {
+                margin-top: 46px;
+                font-size: 2.4rem;
+            }
+            .date {
+                line-height: 1;
+                font-size: 1.4rem;
+            }
+            .magazine-categories {
+                width: fit-content;
+                margin-inline: auto;
+                margin-right: 0;
+                margin-top: -25px;
+                li {
+                    a {
+                        letter-spacing: 0;
+                        font-feature-settings: "palt";
+                        font-size: 1.4rem;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &__article {
+            margin-top: 23px;
+            p {
+                font-size: 1.6rem;
+                line-height: 1.95;
+            }
+        }
+        &__wrap {
+            // width: auto !important;
+            max-width: unset !important;
+            width: 100% !important;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 82px;
+            .blk {
+                width: calc(50% - 40px * 1 / 2);
+                margin-right: 40px;
+                &:nth-of-type(2n) {
+                    margin-right: 0;
+                }
+                &:nth-of-type(n + 3) {
+                    margin-top: 41px;
+                }
+                .thumb {
+                    position: relative;
+                    img {
+                        width: 100%;
+                    }
+                    .cat {
+                        position: absolute;
+                        bottom: 16px;
+                        right: 0;
+                        font-size: 1.2rem;
+                        width: fit-content;
+                        padding: 4px 7px;
+                        line-height: 1;
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+                .ttl {
+                    font-size: 1.4rem;
+                    margin-top: 15px;
+                    line-height: 1.7;
+                }
+                .date {
+                    line-height: 1;
+                    margin-top: 10px;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        &__relate {
+            margin-top: 57px;
+            .ttl {
+                text-align: center;
+            }
+            .rList {
+                display: flex;
+                margin-top: 30px;
+                &__item {
+                    width: calc(100% - 30px * 2 / 3);
+                    margin-right: 30px;
+                    &:nth-of-type(3n) {
+                        margin-right: 0;
+                    }
+                    .thumb {
+                    }
+                    .tArea {
+                        margin-top: 11px;
+                        &__ttl {
+                            font-size: 1.2rem;
+                            line-height: 1.7;
+                        }
+                        &__time {
+                            font-size: 1.2rem;
+                            line-height: 1;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        .navigation {
+            margin-top: 72px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 834px) {
+    #SINGLE {
+        padding-top: 115px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 70px;
+        width: calc(100% - 55px);
+        .singleNews {
+            
+            &__head {
+                &--thm {
+                }
+                .ttl {
+                    margin-top: 25px;
+                    font-size: 1.8rem;
+                    line-height: 1.7;
+                }
+                .date {
+                    font-size: 1.2rem;
+                    margin-top: 16px;
+                }
+                .magazine-categories {
+                    
+                    li {
+                        a {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+            &__article {
+                margin-top: 18px;
+                p {
+                    font-size: 1.4rem;
+                    line-height: 1.95;
+                }
+            }
+            &__wrap {
+                margin-top: 39px;
+                .blk {
+                    
+                    &:nth-of-type(2n) {
+                        
+                    }
+                    &:nth-of-type(n + 3) {
+                        
+                    }
+                    .thumb {
+                        
+                        img {
+                            
+                        }
+                        .cat {
+                            
+                        }
+                    }
+                    .ttl {
+                        
+                    }
+                    .date {
+                        
+                    }
+                }
+            }
+            &__relate {
+                margin-top: 33px;
+                .ttl {
+                    font-size: 1.6rem;
+                }
+                .rList {
+                    margin-top: 22px;
+                    margin-inline: auto;
+                    width: calc(100% - 10px);
+                    &__item {
+                        width: calc(50% - 20px * 1 / 2);
+                        margin-right: 20px;
+                        &:nth-of-type(3n) {
+                            
+                        }
+                        &:nth-of-type(2n) {
+                            margin-right: 0;
+                        }
+                        .thumb {
+                        }
+                        .tArea {
+                            
+                            &__ttl {
+                                font-size: 1.1rem;
+                                line-height: 1.4;
+                            }
+                            &__time {
+                                font-size: 1rem;
+                                line-height: 1;
+                                margin-top: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+            .navigation {
+                margin-top: 32px;
+            }
+        }
+    }
+}
