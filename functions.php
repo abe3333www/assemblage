@@ -123,7 +123,7 @@ function awards_init()
     'menu_position'      => 4,
     'menu_icon'          => 'dashicons-welcome-learn-more',
     'show_in_rest'       => true,
-    'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+    'supports'           => array('title', 'editor', 'thumbnail',),
     'has_archive'        => false,
   );
   register_post_type('awards', $args);
@@ -162,7 +162,7 @@ function magazine_init()
     'menu_position'      => 4,
     'menu_icon'          => 'dashicons-welcome-learn-more',
     'show_in_rest'       => true,
-    'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+    'supports'           => array('title', 'editor', 'thumbnail',),
     'has_archive'        => true,
   );
   register_post_type('magazine', $args);
@@ -185,3 +185,171 @@ function magazine_init()
   );
 }
 add_action('init', 'magazine_init');
+
+
+
+//  カスタム投稿 shoplist
+function shoplist_init()
+{
+  //カスタム投稿【 shoplist 】
+  $labels = array(
+    'name'               => _x('shoplist一覧', 'post type general name'),
+    'singular_name'      => _x('shoplist一覧', 'post type singular name'),
+    'add_new'            => _x('新規追加', 'awards'),
+    'add_new_item'       => __('新しく店舗を追加する'),
+    'edit_item'          => __('ページを編集'),
+    'new_item'           => __('新しいページ'),
+    'view_item'          => __('ページを見る'),
+    'search_items'       => __('ページを探す'),
+    'not_found'          => __('ページはありません'),
+    'not_found_in_trash' => __('ゴミ箱にページはありません'),
+    'parent_item_colon'  => '',
+  );
+  $args   = array(
+    'labels'             => $labels,
+    'description'        => 'shoplist一覧ページです。',
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'query_var'          => true,
+    'rewrite'            => array('slug' => 'shoplist', 'with_front' => false),
+    'capability_type'    => 'post',
+    'hierarchical'       => false,
+    'menu_position'      => 5,
+    'menu_icon'          => 'dashicons-store',
+    'show_in_rest'       => true,
+    'supports'           => array('title'),
+    'has_archive'        => true,
+  );
+  register_post_type('shoplist', $args);
+
+  // カテゴリ追加
+  register_taxonomy(
+    'shoplist_cat',   // タクソノミーのスラッグ
+    'shoplist',       // カスタム投稿タイプ
+    array(
+      'hierarchical' => true,
+      'label' => '地域',
+      'public' => true,
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'show_in_nav_menus' => true,
+      'query_var' => true,
+      'rewrite' => array('slug' => 'shoplist', 'with_front' => false),
+      'show_in_rest' => true,
+    )
+  );
+}
+add_action('init', 'shoplist_init');
+
+
+/* ****************************
+カスタムフィールド
+**************************** */
+// カスタムフィールドを追加
+function add_shoplist_meta_boxes() {
+  add_meta_box(
+      'shoplist_info', // メタボックスID
+      '店舗情報', // メタボックスタイトル
+      'display_shoplist_meta_box', // コールバック関数
+      'shoplist', // カスタム投稿タイプ
+      'normal', // 表示場所
+      'high' // 優先度
+  );
+}
+add_action('add_meta_boxes', 'add_shoplist_meta_boxes');
+
+// メタボックスの中身を表示
+function display_shoplist_meta_box($post) {
+  $address = get_post_meta($post->ID, '_shop_address', true);
+  $tel = get_post_meta($post->ID, '_shop_tel', true);
+  $fax = get_post_meta($post->ID, '_shop_fax', true);
+  $hours = get_post_meta($post->ID, '_shop_hours', true);
+  $closed = get_post_meta($post->ID, '_shop_closed', true);
+  $website = get_post_meta($post->ID, '_shop_website', true);
+  wp_nonce_field(basename(__FILE__), 'shoplist_nonce');
+  ?>
+  <p>
+      <label for="shop_address">住所</label>
+      <input type="text" id="shop_address" name="shop_address" value="<?php echo esc_attr($address); ?>" style="width: 100%;" />
+  </p>
+  <p>
+      <label for="shop_tel">Tel</label>
+      <input type="text" id="shop_tel" name="shop_tel" value="<?php echo esc_attr($tel); ?>" style="width: 100%;" />
+  </p>
+  <p>
+      <label for="shop_fax">Fax</label>
+      <input type="text" id="shop_fax" name="shop_fax" value="<?php echo esc_attr($fax); ?>" style="width: 100%;" />
+  </p>
+  <p>
+      <label for="shop_hours">営業時間</label>
+      <input type="text" id="shop_hours" name="shop_hours" value="<?php echo esc_attr($hours); ?>" style="width: 100%;" />
+  </p>
+  <p>
+      <label for="shop_closed">定休日</label>
+      <input type="text" id="shop_closed" name="shop_closed" value="<?php echo esc_attr($closed); ?>" style="width: 100%;" />
+  </p>
+  <p>
+      <label for="shop_website">サイトURL</label>
+      <input type="text" id="shop_website" name="shop_website" value="<?php echo esc_attr($website); ?>" style="width: 100%;" />
+  </p>
+  <?php
+}
+
+// カスタムフィールドの保存
+function save_shoplist_meta_box($post_id) {
+  if (!isset($_POST['shoplist_nonce']) || !wp_verify_nonce($_POST['shoplist_nonce'], basename(__FILE__))) {
+      return $post_id;
+  }
+
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+      return $post_id;
+  }
+
+  if (!current_user_can('edit_post', $post_id)) {
+      return $post_id;
+  }
+
+  // 各フィールドの保存処理
+  $fields = [
+      'shop_address' => '_shop_address',
+      'shop_tel' => '_shop_tel',
+      'shop_fax' => '_shop_fax',
+      'shop_hours' => '_shop_hours',
+      'shop_closed' => '_shop_closed',
+      'shop_website' => '_shop_website',
+  ];
+
+  foreach ($fields as $key => $meta_key) {
+      if (isset($_POST[$key])) {
+          update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$key]));
+      }
+  }
+}
+add_action('save_post', 'save_shoplist_meta_box');
+
+
+/* ****************************
+ショートコード作成
+**************************** */
+// Google Maps iframeを出力するショートコードを作成
+function get_google_maps_embed_without_api($address) {
+  // 住所をURLエンコード
+  $encoded_address = urlencode($address);
+
+  // Google Maps埋め込み用URLを生成 (APIキーなし)
+  $google_maps_url = "https://www.google.com/maps?q={$encoded_address}&output=embed";
+
+  // iframeを返す
+  return '<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="' . esc_url($google_maps_url) . '"></iframe>';
+}
+
+// フロントエンドにGoogle Maps iframeを表示
+function display_shop_google_map_without_api() {
+  global $post;
+  $address = get_post_meta($post->ID, '_shop_address', true);
+  
+  if ($address) {
+      echo get_google_maps_embed_without_api($address);
+  }
+}
