@@ -72,13 +72,13 @@
               <nav class="hd__nav">
                 <ul class="hd__nav--ul">
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/">Top</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/toc" target="_blank">Magazine</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/news/">About</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/faq/">Products</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/cooperation/">News</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/cooperation/">History</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/cooperation/">Shop list</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/cooperation/">FAQ</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/toc/" target="_blank">Products</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/news/">News</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
                 </ul>
                 <p class="hd__nav--line sp"><a class="hd__nav--line--link mincho" href="" target="_blank">Assemblage Club 公式LINE@</a></p>
                 <p class="hd__nav--copy sp mincho">M KYOTO Online Store</p>

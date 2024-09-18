@@ -36,7 +36,7 @@ $website = get_post_meta(get_the_ID(), '_shop_website', true);
 
     <nav class="navigation pager" role="navigation">
         <div class="pager__links">
-          <a class="pager__links--top" href="<?php echo home_url('shoplist'); ?>">一覧へ戻る</a>
+          <a class="pager__links--top" href="<?php echo site_url('shoplist'); ?>">一覧へ戻る</a>
         </div>
       </nav>
   </section>
