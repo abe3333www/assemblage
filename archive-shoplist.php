@@ -41,7 +41,7 @@
         if ($magazine_query->have_posts()) :
             while ($magazine_query->have_posts()) : $magazine_query->the_post();
         ?>
-        <a href="<?php the_permalink(); ?>" class="archiveShop__shop">
+        <a id="shop-<?php the_ID(); ?>" href="<?php the_permalink(); ?>" class="archiveShop__shop">
             <h3 class="archiveShop__shop--name"><?php the_title(); ?></h3>
             <p class="archiveShop__shop--address">京都府京都市右京区○○町22-4</p>
             <div class="archiveShop__shop--call">

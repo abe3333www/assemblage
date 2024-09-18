@@ -206,13 +206,21 @@
         <h2 class="topSh__ttl comTopTtl -ja">取り扱い店舗様</h2>
         <div class="topSh_wrap">
           <ul class="topSh_list">
-            <li><a href="">ABCの商品を取り扱っている飲食店名が入ります</a></li>
-            <li><a href="">ABCの商品を取り扱っている飲食店名が入ります</a></li>
-            <li><a href="">ABCの商品を取り扱っている飲食店名が入ります</a></li>
-            <li><a href="">ABCの商品を取り扱っている飲食店名が入ります</a></li>
-            <li><a href="">ABCの商品を取り扱っている飲食店名が入ります</a></li>
+            <?php
+            // カスタムクエリを作成
+            $args = array(
+                'post_type' => 'shoplist', // カスタム投稿タイプ 'shoplist'
+                'posts_per_page' => 5,     // 1ページに表示する記事数
+            );
+            $shoplist_query = new WP_Query($args); // クエリを作成
+            // 記事が存在する場合は表示
+            if ($shoplist_query->have_posts()) :
+                while ($shoplist_query->have_posts()) : $shoplist_query->the_post();
+            ?>
+            <li><a href="<?php echo site_url('shoplist'); ?>/#shop-<?php the_ID(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; endif; ?>
           </ul>
-          <a class="topSh_btn linkbtn ffEn" href="<?php echo site_url('news'); ?>">Read more</a>
+          <a class="topSh_btn linkbtn ffEn" href="<?php echo site_url('shoplist'); ?>">Read more</a>
         </div>
       </div>
     </section>
