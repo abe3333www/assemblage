@@ -215,9 +215,9 @@ const topMaSwiper = new Swiper('.js-topMaSwiper', {
 	speed: 1000,
 	// autoHeight: true,
 	// effect: "fade",
-	// autoplay: {
-	//   disableOnInteraction: false,
-	// },
+	autoplay: {
+	  disableOnInteraction: false,
+	},
 
 	// ページネーション
 	pagination: {
