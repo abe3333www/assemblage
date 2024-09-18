@@ -266,10 +266,6 @@ HEADER
   }
 }
 .hd {
-  
-
-
-
   position: fixed;
   top: 0;
   left: 0;
@@ -357,7 +353,7 @@ HEADER
 
   opacity: 1;
   visibility: visible;
-  z-index: 10;
+  z-index: 1000;
   transition: all 0.3s;
   &.off {
     opacity: 0;
@@ -422,6 +418,7 @@ HEADER
   .addLine {
     top: 0px;
     height: 31px;
+    z-index: 1000 !important;
     a {
       font-size: 1rem;
     }
@@ -787,7 +784,6 @@ HEADER
 //   }
 // }
 
-
 .ft {
   background-image: url(../../assets/img/common/ft_bg.png);
   background-size: cover;
@@ -925,7 +921,7 @@ HEADER
           margin-top: 6px;
           li {
             margin-left: 20px;
-            a {    
+            a {
               font-size: 1.2rem;
             }
           }
@@ -1062,7 +1058,6 @@ HEADER
     background-image: url(../../assets/img/common/ft_bg_sp.png);
     background-size: 100%;
     a {
-      
     }
     &_cnt {
       padding: 49px 0 0px;
@@ -1123,11 +1118,8 @@ HEADER
                 }
               }
               &.fCol {
-                
                 a {
-                  
                   &:not(:first-of-type) {
-                    
                   }
                 }
               }
@@ -1188,8 +1180,7 @@ HEADER
           &-link {
             margin-top: 21px;
             li {
-              
-              a {    
+              a {
                 font-size: 1rem;
               }
             }
@@ -1268,7 +1259,6 @@ HEADER
   .ft {
     background-size: auto;
   }
-  
 }
 
 /*----------------------------------------
@@ -1385,7 +1375,7 @@ HEADER
       justify-content: space-between;
       width: 80px;
       height: 50px;
-      padding: 5px 0;
+      padding: 10px 0;
       line-height: 1;
     }
     &--prev {
@@ -1427,7 +1417,7 @@ HEADER
       }
       &::after {
         position: absolute;
-        top: 11px;
+        top: 3px;
       }
       @media screen and (min-width: #{$minWidth +1}) {
         &:hover {
@@ -1620,5 +1610,206 @@ HEADER
 @media screen and (max-width: #{$minWidth}) {
   .withMV .hd a {
     color: #fff !important;
+  }
+}
+
+// 共通ヘッダー SP用
+.hdCmn {
+  position: fixed;
+  top: 69px;
+  right: 54px;
+  z-index: 10;
+  mix-blend-mode: difference; /* ← コレ */
+
+  nav {
+    ul {
+      li {
+        padding-right: 10px;
+        text-align: right;
+        line-height: 1;
+        position: relative;
+        &:not(:first-of-type) {
+          margin-top: 17px;
+        }
+        a {
+          font-family: $ffEn;
+          font-size: 1.4rem;
+          line-height: 1;
+          transition: all 0s;
+          color: #fff; /* ← コレ */
+          &:hover {
+            // color: $txtGray3;
+            text-decoration: underline;
+          }
+        }
+        &.on {
+          a {
+            font-weight: bold;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 100vmax;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+            background-color: #fff;
+          }
+        }
+        &.liSw {
+          &.on {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+      .trp-language-switcher {
+        height: auto !important;
+        width: auto !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+      }
+      .trp-language-switcher > div > a {
+        &:last-of-type {
+          margin-right: 0 !important;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 834px) {
+  .hdCmn {
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: 310px;
+    background-color: #000;
+    height: 100vh;
+    transition: all 0.3s;
+    padding: 0px 10px 0 48px;
+    display: flex;
+    align-items: center;
+
+    mix-blend-mode: difference; /* ← コレ */
+
+    &.on {
+      transform: translateX(0%);
+      mix-blend-mode: unset;
+    }
+    &__logo {
+      width: fit-content;
+      position: fixed;
+      z-index: 1000;
+      top: 50px;
+      left: 10px;
+    }
+    &__hb {
+      position: fixed;
+      z-index: 9;
+      top: 58px;
+      right: 15px;
+      width: 30px;
+      height: 20px;
+
+      mix-blend-mode: difference; /* ← コレ */
+      span {
+        position: absolute;
+        background-color: #000;
+        width: 100%;
+        height: 1px;
+
+        // background-color: #fff;
+        &:nth-of-type(1) {
+          top: 0;
+        }
+        &:nth-of-type(2) {
+          top: 50%;
+        }
+        &:nth-of-type(3) {
+          top: 100%;
+        }
+      }
+    }
+    &__close {
+      position: absolute;
+      z-index: 10;
+      top: 58px;
+      right: 15px;
+      width: 30px;
+      height: 20px;
+      span {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 1px;
+        top: 50%;
+        &:nth-of-type(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    nav {
+      ul {
+        transform: translateY(-19%);
+        li {
+          text-align: left;
+          &:not(:first-of-type) {
+            margin-top: 29px;
+          }
+          a {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: normal;
+            &:after {
+            }
+            &:hover {
+            }
+          }
+          &.on {
+            a {
+              font-weight: normal;
+            }
+            &:after {
+              display: none;
+            }
+          }
+          &.liSw {
+            margin-top: 50px;
+          }
+        }
+        .trp-language-switcher {
+          justify-content: flex-start !important;
+        }
+        .trp-language-switcher > div > a {
+        }
+      }
+    }
+  }
+
+  .navComBg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    &.on {
+      z-index: 9;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

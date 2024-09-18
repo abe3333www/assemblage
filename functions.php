@@ -179,7 +179,7 @@ function magazine_init()
       'show_ui' => true,
       'show_in_nav_menus' => true,
       'query_var' => true,
-      'rewrite' => array('slug' => 'magazine', 'with_front' => false),
+      'rewrite' => array('slug' => 'magazine_cat', 'with_front' => false),
       'show_in_rest' => true,
     )
   );
@@ -235,7 +235,7 @@ function shoplist_init()
       'show_ui' => true,
       'show_in_nav_menus' => true,
       'query_var' => true,
-      'rewrite' => array('slug' => 'shoplist', 'with_front' => false),
+      'rewrite' => array('slug' => 'shoplist_cat', 'with_front' => false),
       'show_in_rest' => true,
     )
   );

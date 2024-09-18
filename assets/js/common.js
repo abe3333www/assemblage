@@ -209,9 +209,9 @@ document.addEventListener('DOMContentLoaded', function() {
 const topMaSwiper = new Swiper('.js-topMaSwiper', {
 	// オプション
 	loop: true,
-	slidesPerView: 1,
-	centeredSlides: true,
-	spaceBetween: 25,
+	slidesPerView: 1.1,
+	centeredSlides: false,
+	spaceBetween: 0,
 	speed: 1000,
 	// autoHeight: true,
 	// effect: "fade",
@@ -223,14 +223,89 @@ const topMaSwiper = new Swiper('.js-topMaSwiper', {
 	pagination: {
 	  el: '.swiper-pagination',
 	  clickable: true,
+	  type: "progressbar",
 	},
 
 	// ブレイクポイント
 	breakpoints: {
 	  // 769px以上の場合
 	  500: {
-		slidesPerView: 3,
+		slidesPerView: 3.3,
 	  },
 	},
   });
+});
+
+
+
+
+
+
+
+
+
+// 共通ヘッダー SP 
+// hamburger
+document.addEventListener('DOMContentLoaded', function () {
+	const menuButton = document.querySelector('.js-hbCmn');
+	const navigation = document.querySelector('.js-navCom');
+	const navLinks = document.querySelectorAll('.js-navCom a');
+	const closeButton = document.querySelector('.js-closeCom');
+	const logo = document.querySelector('.js-logoCom');
+	const logoImg = document.querySelector('.js-logoCom img');
+
+	const navBg = document.querySelector('.js-navCmnBg');
+	const newLogoName = 'logo_cmn_hd_wht.png'; // 新しい画像のファイル名
+	const originalLogoName = 'logo_cmn_hd_blk.png'; // 元の画像のファイル名
+
+
+	function updateLogoImage() {
+        const currentSrc = logoImg.src;
+        const basePath = currentSrc.substring(0, currentSrc.lastIndexOf('/') + 1); // ベースパスを取得
+        if (logo.classList.contains('on')) {
+            logoImg.src = basePath + newLogoName;
+        } else {
+            logoImg.src = basePath + originalLogoName;
+        }
+    }
+
+	// ハンバーガー押した時
+	menuButton.addEventListener('click', function () {
+		navigation.classList.toggle('on');
+		navBg.classList.add('on');
+		logo.classList.toggle('on');
+
+		updateLogoImage();
+	});
+
+	// ナビのリンク押した時
+	navLinks.forEach(function (navLink) {
+		navLink.addEventListener('click', function () {
+			navigation.classList.remove('on');
+			navBg.classList.remove('on');
+			logo.classList.remove('on');
+		});
+
+
+	});
+
+
+	// 閉じるボタン押した時
+	closeButton.addEventListener('click', function () {
+		navigation.classList.remove('on');
+		navBg.classList.remove('on');
+		logo.classList.remove('on');
+
+		updateLogoImage();
+
+	});
+
+
+	// ナビ背景押した時
+	navBg.addEventListener('click', function () {
+		navigation.classList.remove('on');
+		navBg.classList.remove('on');
+		logo.classList.toggle('on');
+
+	});
 });
