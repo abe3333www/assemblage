@@ -2,7 +2,7 @@
 
 <!-- CONTAINER -->
 <main class="top"><!-- 最大幅 -->
-  
+
   <section id="TOP-MV" class="topMv withMV__trigger">
     <div class="topMv__wrap">
       <video class="topMv__video" src="<?php echo get_template_directory_uri(); ?>/assets/movie/top.mp4" playsinline autoplay muted loop></video>
@@ -74,42 +74,69 @@
       </div>
     </section>
     <section id="TOP-PRODUCTS" class="topPr">
-      <div class="topPr_cnt cmnSecLeftCnt">
-        <h2 class="topPr_cnt-ttl comTopTtl ffEn">Products</h2>
-        <div class="topPr_cnt-flex">
-          <div class="thumb">
-            <p class="animeBox"><img class="ivo smoothly" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/pr_img1.jpg" alt="料理　画像" width="310" height="453"></p>
-          </div>
-          <div class="tArea">
-            <p class="tArea__ttl"> Assemblage Club 01<span>CODENAME : Taro´</span></p>
-            <p class="tArea__ja">アッサンブラージュ クラブ 01 コード ネーム タロウ ダッシュ</p>
-            <p class="tArea__txt">日本酒の世界においては革新的なアッサンブラージュ技法によって、<br class="pc">甘味・辛味・苦味・酸味・うま味のバランスをコントロール。<br>瑞々しい透き通るような甘さとキリッとした辛さが混ざり合い、従来の日本酒の常識を覆す奥深い味わいです。国際的な日本酒コンペティション「MILANO SAKE CHALLENGE 2024」で「Taro’」が銀賞を受賞、海外でも高い評価を得ています。</p>
-            <div class="tArea__tbl">
-              <dl>
-                <dt>原材料</dt>
-                <dd>米（国産）、米こうじ（国内産米）</dd>
-              </dl>
-              <dl>
-                <dt>アルコール度数</dt>
-                <dd>15％</dd>
-              </dl>
-              <dl>
-                <dt>内容量</dt>
-                <dd>720ml/180ml</dd>
-              </dl>
-              <dl>
-                <dt>保存方法</dt>
-                <dd>冷蔵保存</dd>
-              </dl>
-              <dl>
-                <dt>販売</dt>
-                <dd>株式会社リーフ・パブリケーションズ</dd>
-              </dl>
+      <?php
+      $args = array(
+        'post_type' => 'products',
+        'meta_key' => '_products_materials',
+        'posts_per_page' => -1,
+      );
+      $products_query = new WP_Query($args);
+      ?>
+      <?php
+      if ($products_query->have_posts()) :
+        while ($products_query->have_posts()) :
+          $products_query->the_post();
+          $code = get_post_meta(get_the_ID(), '_products_code', true);
+          $jattl = get_post_meta(get_the_ID(), '_products_jattl', true);
+          $materials = get_post_meta(get_the_ID(), '_products_materials', true);
+          $alcohol = get_post_meta(get_the_ID(), '_products_alcohol', true);
+          $contents = get_post_meta(get_the_ID(), '_products_contents', true);
+          $save = get_post_meta(get_the_ID(), '_products_save', true);
+          $sell = get_post_meta(get_the_ID(), '_products_sell', true);
+      ?>
+          <div class="topPr_cnt cmnSecLeftCnt">
+            <h2 class="topPr_cnt-ttl comTopTtl ffEn">Products</h2>
+            <div class="topPr_cnt-flex">
+              <div class="thumb">
+                <p class="animeBox">
+                  <img class="ivo smoothly" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php the_post_thumbnail_url(); ?>" alt="料理　画像" width="310" height="453">
+                </p>
+              </div>
+              <div class="tArea">
+                <p class="tArea__ttl"><?php the_title(); ?><span><?php echo $code ?></span></p>
+                <p class="tArea__ja"><?php echo $jattl ?></p>
+                <p class="tArea__txt"><?php the_content(); ?></p>
+                <div class="tArea__tbl">
+                  <dl>
+                    <dt>原材料</dt>
+                    <dd><?php echo $materials ?></dd>
+                  </dl>
+                  <dl>
+                    <dt>アルコール度数</dt>
+                    <dd><?php echo $alcohol ?></dd>
+                  </dl>
+                  <dl>
+                    <dt>内容量</dt>
+                    <dd><?php echo $contents ?></dd>
+                  </dl>
+                  <dl>
+                    <dt>保存方法</dt>
+                    <dd><?php echo $save ?></dd>
+                  </dl>
+                  <dl>
+                    <dt>販売</dt>
+                    <dd><?php echo $sell ?></dd>
+                  </dl>
+                </div>
+              </div>
             </div>
+            <a class="topPr_btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>">商品詳細はこちら</a>
           </div>
-        </div>
-        <a class="topPr_btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>">商品詳細はこちら</a>
-      </div>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
     </section>
     <section id="TOP-AWARDS" class="topAw">
       <div class="topAw_cnt cmnSecLeftCnt">
@@ -210,16 +237,17 @@
             <?php
             // カスタムクエリを作成
             $args = array(
-                'post_type' => 'shoplist', // カスタム投稿タイプ 'shoplist'
-                'posts_per_page' => 5,     // 1ページに表示する記事数
+              'post_type' => 'shoplist', // カスタム投稿タイプ 'shoplist'
+              'posts_per_page' => 5,     // 1ページに表示する記事数
             );
             $shoplist_query = new WP_Query($args); // クエリを作成
             // 記事が存在する場合は表示
             if ($shoplist_query->have_posts()) :
-                while ($shoplist_query->have_posts()) : $shoplist_query->the_post();
+              while ($shoplist_query->have_posts()) : $shoplist_query->the_post();
             ?>
-            <li><a href="<?php echo site_url('shoplist'); ?>/#shop-<?php the_ID(); ?>"><?php the_title(); ?></a></li>
-            <?php endwhile; endif; ?>
+                <li><a href="<?php echo site_url('shoplist'); ?>/#shop-<?php the_ID(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile;
+            endif; ?>
           </ul>
           <a class="topSh_btn linkbtn ffEn" href="<?php echo site_url('shoplist'); ?>">Read more</a>
         </div>
@@ -238,377 +266,396 @@
     <section id="TOP-HISTORY" class="topCol">
       <div class="topCol_cnt cmnSecLeftCnt">
         <h2 class="topCol__ttl comTopTtl ffEn">Collection</h2>
-        <div class="topCol_wrap">
-          <div class="topCol_cnt-flex">
-            <div class="img">
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/col_img1.jpg" alt="料理画像" class="">
-            </div>
-            <div class="tArea">
-              <p class="tArea__ttl">
-                Assemblage Club 01<span>CODENAME : Taro´</span>
-              </p>
-              <p class="tArea__txt">
-                日本酒の世界においては革新的なアッサンブラージュ技法によって、甘味・辛味・苦味・酸味・うま味のバランスをコントロール。<br>瑞々しい透き通るような甘さとキリッとした辛さが混ざり合い、従来の日本酒の常識を覆す奥深い味わいです。国際的な日本酒コンペティション「SINGAPORE SAKE CHALLENGE 2023」で「Taro※」が金賞を受賞、海外でも高い評価を得ています。
-              </p>
-              <div class="tArea__btn">
-                <div id='product-component-1722991911614'></div>
-                <script type="text/javascript">
-                  /*<![CDATA[*/
-                  (function() {
-                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                    if (window.ShopifyBuy) {
-                      if (window.ShopifyBuy.UI) {
-                        ShopifyBuyInit();
-                      } else {
-                        loadScript();
-                      }
-                    } else {
-                      loadScript();
-                    }
+        <?php
+        $args = array(
+          'post_type' => 'collection',
+          'meta_key' => '_collection_code',
+          'posts_per_page' => -1,
+        );
+        $collection_query = new WP_Query($args);
+        ?>
+        <?php
+        if ($collection_query->have_posts()) :
+          while ($collection_query->have_posts()) :
+            $collection_query->the_post();
+            $code = get_post_meta(get_the_ID(), '_collection_code', true);
+        ?>
+            <div class="topCol_wrap">
+              <div class="topCol_cnt-flex">
+                <div class="img">
+                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/col_img1.jpg" alt="料理画像" class="">
+                </div>
+                <div class="tArea">
+                  <p class="tArea__ttl">
+                    <?php the_title();?><span><?php echo $code;?></span>
+                  </p>
+                  <p class="tArea__txt">
+                    <?php the_content();?>
+                  </p>
+                  <div class="tArea__btn">
+                    <div id='product-component-1722991911614'></div>
+                    <script type="text/javascript">
+                      /*<![CDATA[*/
+                      (function() {
+                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                        if (window.ShopifyBuy) {
+                          if (window.ShopifyBuy.UI) {
+                            ShopifyBuyInit();
+                          } else {
+                            loadScript();
+                          }
+                        } else {
+                          loadScript();
+                        }
 
-                    function loadScript() {
-                      var script = document.createElement('script');
-                      script.async = true;
-                      script.src = scriptURL;
-                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                      script.onload = ShopifyBuyInit;
-                    }
+                        function loadScript() {
+                          var script = document.createElement('script');
+                          script.async = true;
+                          script.src = scriptURL;
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                          script.onload = ShopifyBuyInit;
+                        }
 
-                    function ShopifyBuyInit() {
-                      var client = ShopifyBuy.buildClient({
-                        domain: 'f43f0b-80.myshopify.com',
-                        storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                      });
-                      ShopifyBuy.UI.onReady(client).then(function(ui) {
-                        ui.createComponent('product', {
-                          id: '8520581644510',
-                          node: document.getElementById('product-component-1722991911614'),
-                          moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                          options: {
-                            "product": {
-                              "styles": {
+                        function ShopifyBuyInit() {
+                          var client = ShopifyBuy.buildClient({
+                            domain: 'f43f0b-80.myshopify.com',
+                            storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
+                          });
+                          ShopifyBuy.UI.onReady(client).then(function(ui) {
+                            ui.createComponent('product', {
+                              id: '8520581644510',
+                              node: document.getElementById('product-component-1722991911614'),
+                              moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
+                              options: {
                                 "product": {
-                                  "@media (min-width: 601px)": {
-                                    "max-width": "calc(25% - 20px)",
-                                    "margin-left": "20px",
-                                    "margin-bottom": "50px"
+                                  "styles": {
+                                    "product": {
+                                      "@media (min-width: 601px)": {
+                                        "max-width": "calc(25% - 20px)",
+                                        "margin-left": "20px",
+                                        "margin-bottom": "50px"
+                                      }
+                                    },
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px",
+                                      "padding-left": "67px",
+                                      "padding-right": "67px",
+                                      "width": "100%",
+                                      "font-size": "18px",
+                                    },
+                                    "quantityInput": {
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px"
+                                    }
+                                  },
+                                  "contents": {
+                                    "img": false,
+                                    "title": false,
+                                    "price": false
+                                  },
+                                  "text": {
+                                    "button": "720ml ご購入はこちら"
                                   }
                                 },
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
-                                  },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
-                                  },
-                                  "border-radius": "0px",
-                                  "padding-left": "67px",
-                                  "padding-right": "67px",
-                                  "width": "100%",
-                                  "font-size": "18px",
-                                },
-                                "quantityInput": {
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px"
-                                }
-                              },
-                              "contents": {
-                                "img": false,
-                                "title": false,
-                                "price": false
-                              },
-                              "text": {
-                                "button": "720ml ご購入はこちら"
-                              }
-                            },
-                            "productSet": {
-                              "styles": {
-                                "products": {
-                                  "@media (min-width: 601px)": {
-                                    "margin-left": "-20px"
-                                  }
-                                }
-                              }
-                            },
-                            "modalProduct": {
-                              "contents": {
-                                "img": false,
-                                "imgWithCarousel": true,
-                                "button": false,
-                                "buttonWithQuantity": true
-                              },
-                              "styles": {
-                                "product": {
-                                  "@media (min-width: 601px)": {
-                                    "max-width": "100%",
-                                    "margin-left": "0px",
-                                    "margin-bottom": "0px"
+                                "productSet": {
+                                  "styles": {
+                                    "products": {
+                                      "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                      }
+                                    }
                                   }
                                 },
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
+                                "modalProduct": {
+                                  "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
                                   },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
+                                  "styles": {
+                                    "product": {
+                                      "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                      }
+                                    },
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px",
+                                      "padding-left": "67px",
+                                      "padding-right": "67px"
+                                    },
+                                    "quantityInput": {
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px"
+                                    }
                                   },
-                                  "border-radius": "0px",
-                                  "padding-left": "67px",
-                                  "padding-right": "67px"
+                                  "text": {
+                                    "button": "Add to cart"
+                                  }
                                 },
-                                "quantityInput": {
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px"
-                                }
-                              },
-                              "text": {
-                                "button": "Add to cart"
-                              }
-                            },
-                            "option": {},
-                            "cart": {
-                              "styles": {
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
+                                "option": {},
+                                "cart": {
+                                  "styles": {
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px"
+                                    }
                                   },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
-                                  },
-                                  "border-radius": "0px"
-                                }
-                              },
-                              "text": {
-                                "title": "買い物かご",
-                                "total": "小計",
-                                "empty": "カートを空にする",
-                                "notice": "",
-                                "button": "購入する"
-                              }
-                            },
-                            "toggle": {
-                              "styles": {
+                                  "text": {
+                                    "title": "買い物かご",
+                                    "total": "小計",
+                                    "empty": "カートを空にする",
+                                    "notice": "",
+                                    "button": "購入する"
+                                  }
+                                },
                                 "toggle": {
-                                  "font-family": "Times New Roman, serif",
-                                  "background-color": "#000000",
-                                  ":hover": {
-                                    "background-color": "#000000"
-                                  },
-                                  ":focus": {
-                                    "background-color": "#000000"
+                                  "styles": {
+                                    "toggle": {
+                                      "font-family": "Times New Roman, serif",
+                                      "background-color": "#000000",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      }
+                                    },
+                                    "count": {
+                                      "font-size": "14px"
+                                    }
                                   }
-                                },
-                                "count": {
-                                  "font-size": "14px"
                                 }
-                              }
-                            }
-                          },
-                        });
-                      });
-                    }
-                  })();
-                  /*]]>*/
-                </script>
+                              },
+                            });
+                          });
+                        }
+                      })();
+                      /*]]>*/
+                    </script>
 
-                <div id='product-component-1722991814353'></div>
-                <script type="text/javascript">
-                  /*<![CDATA[*/
-                  (function() {
-                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                    if (window.ShopifyBuy) {
-                      if (window.ShopifyBuy.UI) {
-                        ShopifyBuyInit();
-                      } else {
-                        loadScript();
-                      }
-                    } else {
-                      loadScript();
-                    }
+                    <div id='product-component-1722991814353'></div>
+                    <script type="text/javascript">
+                      /*<![CDATA[*/
+                      (function() {
+                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                        if (window.ShopifyBuy) {
+                          if (window.ShopifyBuy.UI) {
+                            ShopifyBuyInit();
+                          } else {
+                            loadScript();
+                          }
+                        } else {
+                          loadScript();
+                        }
 
-                    function loadScript() {
-                      var script = document.createElement('script');
-                      script.async = true;
-                      script.src = scriptURL;
-                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                      script.onload = ShopifyBuyInit;
-                    }
+                        function loadScript() {
+                          var script = document.createElement('script');
+                          script.async = true;
+                          script.src = scriptURL;
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                          script.onload = ShopifyBuyInit;
+                        }
 
-                    function ShopifyBuyInit() {
-                      var client = ShopifyBuy.buildClient({
-                        domain: 'f43f0b-80.myshopify.com',
-                        storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                      });
-                      ShopifyBuy.UI.onReady(client).then(function(ui) {
-                        ui.createComponent('product', {
-                          id: '8613730320606',
-                          node: document.getElementById('product-component-1722991814353'),
-                          moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                          options: {
-                            "product": {
-                              "styles": {
+                        function ShopifyBuyInit() {
+                          var client = ShopifyBuy.buildClient({
+                            domain: 'f43f0b-80.myshopify.com',
+                            storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
+                          });
+                          ShopifyBuy.UI.onReady(client).then(function(ui) {
+                            ui.createComponent('product', {
+                              id: '8613730320606',
+                              node: document.getElementById('product-component-1722991814353'),
+                              moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
+                              options: {
                                 "product": {
-                                  "@media (min-width: 601px)": {
-                                    "max-width": "calc(25% - 20px)",
-                                    "margin-left": "20px",
-                                    "margin-bottom": "50px"
+                                  "styles": {
+                                    "product": {
+                                      "@media (min-width: 601px)": {
+                                        "max-width": "calc(25% - 20px)",
+                                        "margin-left": "20px",
+                                        "margin-bottom": "50px"
+                                      }
+                                    },
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px",
+                                      "padding-left": "67px",
+                                      "padding-right": "67px",
+                                      "width": "100%",
+                                      "font-size": "18px",
+                                    },
+                                    "quantityInput": {
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px"
+                                    }
+                                  },
+                                  "contents": {
+                                    "img": false,
+                                    "title": false,
+                                    "price": false
+                                  },
+                                  "text": {
+                                    "button": "180ml ご購入はこちら"
                                   }
                                 },
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
-                                  },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
-                                  },
-                                  "border-radius": "0px",
-                                  "padding-left": "67px",
-                                  "padding-right": "67px",
-                                  "width": "100%",
-                                  "font-size": "18px",
-                                },
-                                "quantityInput": {
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px"
-                                }
-                              },
-                              "contents": {
-                                "img": false,
-                                "title": false,
-                                "price": false
-                              },
-                              "text": {
-                                "button": "180ml ご購入はこちら"
-                              }
-                            },
-                            "productSet": {
-                              "styles": {
-                                "products": {
-                                  "@media (min-width: 601px)": {
-                                    "margin-left": "-20px"
-                                  }
-                                }
-                              }
-                            },
-                            "modalProduct": {
-                              "contents": {
-                                "img": false,
-                                "imgWithCarousel": true,
-                                "button": false,
-                                "buttonWithQuantity": true
-                              },
-                              "styles": {
-                                "product": {
-                                  "@media (min-width: 601px)": {
-                                    "max-width": "100%",
-                                    "margin-left": "0px",
-                                    "margin-bottom": "0px"
+                                "productSet": {
+                                  "styles": {
+                                    "products": {
+                                      "@media (min-width: 601px)": {
+                                        "margin-left": "-20px"
+                                      }
+                                    }
                                   }
                                 },
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
+                                "modalProduct": {
+                                  "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
                                   },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
+                                  "styles": {
+                                    "product": {
+                                      "@media (min-width: 601px)": {
+                                        "max-width": "100%",
+                                        "margin-left": "0px",
+                                        "margin-bottom": "0px"
+                                      }
+                                    },
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px",
+                                      "padding-left": "67px",
+                                      "padding-right": "67px"
+                                    },
+                                    "quantityInput": {
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px"
+                                    }
                                   },
-                                  "border-radius": "0px",
-                                  "padding-left": "67px",
-                                  "padding-right": "67px"
+                                  "text": {
+                                    "button": "Add to cart"
+                                  }
                                 },
-                                "quantityInput": {
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px"
-                                }
-                              },
-                              "text": {
-                                "button": "Add to cart"
-                              }
-                            },
-                            "option": {},
-                            "cart": {
-                              "styles": {
-                                "button": {
-                                  "font-family": "Times New Roman, serif",
-                                  "font-size": "14px",
-                                  "padding-top": "15px",
-                                  "padding-bottom": "15px",
-                                  ":hover": {
-                                    "background-color": "#000000"
+                                "option": {},
+                                "cart": {
+                                  "styles": {
+                                    "button": {
+                                      "font-family": "Times New Roman, serif",
+                                      "font-size": "14px",
+                                      "padding-top": "15px",
+                                      "padding-bottom": "15px",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      "background-color": "#000000",
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      },
+                                      "border-radius": "0px"
+                                    }
                                   },
-                                  "background-color": "#000000",
-                                  ":focus": {
-                                    "background-color": "#000000"
-                                  },
-                                  "border-radius": "0px"
-                                }
-                              },
-                              "text": {
-                                "title": "買い物かご",
-                                "total": "小計",
-                                "empty": "カートを空にする",
-                                "notice": "",
-                                "button": "購入する"
-                              }
-                            },
-                            "toggle": {
-                              "styles": {
+                                  "text": {
+                                    "title": "買い物かご",
+                                    "total": "小計",
+                                    "empty": "カートを空にする",
+                                    "notice": "",
+                                    "button": "購入する"
+                                  }
+                                },
                                 "toggle": {
-                                  "font-family": "Times New Roman, serif",
-                                  "background-color": "#000000",
-                                  ":hover": {
-                                    "background-color": "#000000"
-                                  },
-                                  ":focus": {
-                                    "background-color": "#000000"
+                                  "styles": {
+                                    "toggle": {
+                                      "font-family": "Times New Roman, serif",
+                                      "background-color": "#000000",
+                                      ":hover": {
+                                        "background-color": "#000000"
+                                      },
+                                      ":focus": {
+                                        "background-color": "#000000"
+                                      }
+                                    },
+                                    "count": {
+                                      "font-size": "14px"
+                                    }
                                   }
-                                },
-                                "count": {
-                                  "font-size": "14px"
                                 }
-                              }
-                            }
-                          },
-                        });
-                      });
-                    }
-                  })();
-                  /*]]>*/
-                </script>
+                              },
+                            });
+                          });
+                        }
+                      })();
+                      /*]]>*/
+                    </script>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-        </div>
+            </div>
+        <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
       </div>
     </section>
 

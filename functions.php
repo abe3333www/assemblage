@@ -243,24 +243,110 @@ function shoplist_init()
 add_action('init', 'shoplist_init');
 
 
+
+
+
+//  カスタム投稿 Products
+function products_init()
+{
+  //カスタム投稿【 Products 】
+  $labels = array(
+    'name'               => _x('Products一覧', 'post type general name'),
+    'singular_name'      => _x('Products一覧', 'post type singular name'),
+    'add_new'            => _x('新規追加', 'awards'),
+    'add_new_item'       => __('新しくProductsを追加する'),
+    'edit_item'          => __('ページを編集'),
+    'new_item'           => __('新しいページ'),
+    'view_item'          => __('ページを見る'),
+    'search_items'       => __('ページを探す'),
+    'not_found'          => __('ページはありません'),
+    'not_found_in_trash' => __('ゴミ箱にページはありません'),
+    'parent_item_colon'  => '',
+  );
+  $args   = array(
+    'labels'             => $labels,
+    'description'        => 'Products一覧ページです。',
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'query_var'          => true,
+    'rewrite'            => array('slug' => 'awards', 'with_front' => false),
+    'capability_type'    => 'post',
+    'hierarchical'       => false,
+    'menu_position'      => 4,
+    'menu_icon'          => 'dashicons-welcome-learn-more',
+    'show_in_rest'       => true,
+    'supports'           => array('title', 'editor', 'thumbnail',),
+    'has_archive'        => false,
+  );
+  register_post_type('products', $args);
+}
+add_action('init', 'products_init');
+
+
+
+
+//  カスタム投稿 collection
+function collection_init()
+{
+  //カスタム投稿【 collection 】
+  $labels = array(
+    'name'               => _x('collection一覧', 'post type general name'),
+    'singular_name'      => _x('collection一覧', 'post type singular name'),
+    'add_new'            => _x('新規追加', 'awards'),
+    'add_new_item'       => __('新しくcollectionを追加する'),
+    'edit_item'          => __('ページを編集'),
+    'new_item'           => __('新しいページ'),
+    'view_item'          => __('ページを見る'),
+    'search_items'       => __('ページを探す'),
+    'not_found'          => __('ページはありません'),
+    'not_found_in_trash' => __('ゴミ箱にページはありません'),
+    'parent_item_colon'  => '',
+  );
+  $args   = array(
+    'labels'             => $labels,
+    'description'        => 'collection一覧ページです。',
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'query_var'          => true,
+    'rewrite'            => array('slug' => 'awards', 'with_front' => false),
+    'capability_type'    => 'post',
+    'hierarchical'       => false,
+    'menu_position'      => 4,
+    'menu_icon'          => 'dashicons-welcome-learn-more',
+    'show_in_rest'       => true,
+    'supports'           => array('title', 'editor', 'thumbnail',),
+    'has_archive'        => false,
+  );
+  register_post_type('collection', $args);
+}
+add_action('init', 'collection_init');
+
+
+
+
+
 /* ****************************
 カスタムフィールド
 **************************** */
 // カスタムフィールドを追加
-function add_shoplist_meta_boxes() {
+function add_shoplist_meta_boxes()
+{
   add_meta_box(
-      'shoplist_info', // メタボックスID
-      '店舗情報', // メタボックスタイトル
-      'display_shoplist_meta_box', // コールバック関数
-      'shoplist', // カスタム投稿タイプ
-      'normal', // 表示場所
-      'high' // 優先度
+    'shoplist_info', // メタボックスID
+    '店舗情報', // メタボックスタイトル
+    'display_shoplist_meta_box', // コールバック関数
+    'shoplist', // カスタム投稿タイプ
+    'normal', // 表示場所
+    'high' // 優先度
   );
 }
 add_action('add_meta_boxes', 'add_shoplist_meta_boxes');
 
 // メタボックスの中身を表示
-function display_shoplist_meta_box($post) {
+function display_shoplist_meta_box($post)
+{
   $address = get_post_meta($post->ID, '_shop_address', true);
   $tel = get_post_meta($post->ID, '_shop_tel', true);
   $fax = get_post_meta($post->ID, '_shop_fax', true);
@@ -268,72 +354,238 @@ function display_shoplist_meta_box($post) {
   $closed = get_post_meta($post->ID, '_shop_closed', true);
   $website = get_post_meta($post->ID, '_shop_website', true);
   wp_nonce_field(basename(__FILE__), 'shoplist_nonce');
-  ?>
+?>
   <p>
-      <label for="shop_address">住所</label>
-      <input type="text" id="shop_address" name="shop_address" value="<?php echo esc_attr($address); ?>" style="width: 100%;" />
+    <label for="shop_address">住所</label>
+    <input type="text" id="shop_address" name="shop_address" value="<?php echo esc_attr($address); ?>" style="width: 100%;" />
   </p>
   <p>
-      <label for="shop_tel">Tel</label>
-      <input type="text" id="shop_tel" name="shop_tel" value="<?php echo esc_attr($tel); ?>" style="width: 100%;" />
+    <label for="shop_tel">Tel</label>
+    <input type="text" id="shop_tel" name="shop_tel" value="<?php echo esc_attr($tel); ?>" style="width: 100%;" />
   </p>
   <p>
-      <label for="shop_fax">Fax</label>
-      <input type="text" id="shop_fax" name="shop_fax" value="<?php echo esc_attr($fax); ?>" style="width: 100%;" />
+    <label for="shop_fax">Fax</label>
+    <input type="text" id="shop_fax" name="shop_fax" value="<?php echo esc_attr($fax); ?>" style="width: 100%;" />
   </p>
   <p>
-      <label for="shop_hours">営業時間</label>
-      <input type="text" id="shop_hours" name="shop_hours" value="<?php echo esc_attr($hours); ?>" style="width: 100%;" />
+    <label for="shop_hours">営業時間</label>
+    <input type="text" id="shop_hours" name="shop_hours" value="<?php echo esc_attr($hours); ?>" style="width: 100%;" />
   </p>
   <p>
-      <label for="shop_closed">定休日</label>
-      <input type="text" id="shop_closed" name="shop_closed" value="<?php echo esc_attr($closed); ?>" style="width: 100%;" />
+    <label for="shop_closed">定休日</label>
+    <input type="text" id="shop_closed" name="shop_closed" value="<?php echo esc_attr($closed); ?>" style="width: 100%;" />
   </p>
   <p>
-      <label for="shop_website">サイトURL</label>
-      <input type="text" id="shop_website" name="shop_website" value="<?php echo esc_attr($website); ?>" style="width: 100%;" />
+    <label for="shop_website">サイトURL</label>
+    <input type="text" id="shop_website" name="shop_website" value="<?php echo esc_attr($website); ?>" style="width: 100%;" />
   </p>
-  <?php
+<?php
 }
 
 // カスタムフィールドの保存
-function save_shoplist_meta_box($post_id) {
+function save_shoplist_meta_box($post_id)
+{
   if (!isset($_POST['shoplist_nonce']) || !wp_verify_nonce($_POST['shoplist_nonce'], basename(__FILE__))) {
-      return $post_id;
+    return $post_id;
   }
 
   if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-      return $post_id;
+    return $post_id;
   }
 
   if (!current_user_can('edit_post', $post_id)) {
-      return $post_id;
+    return $post_id;
   }
 
   // 各フィールドの保存処理
   $fields = [
-      'shop_address' => '_shop_address',
-      'shop_tel' => '_shop_tel',
-      'shop_fax' => '_shop_fax',
-      'shop_hours' => '_shop_hours',
-      'shop_closed' => '_shop_closed',
-      'shop_website' => '_shop_website',
+    'shop_address' => '_shop_address',
+    'shop_tel' => '_shop_tel',
+    'shop_fax' => '_shop_fax',
+    'shop_hours' => '_shop_hours',
+    'shop_closed' => '_shop_closed',
+    'shop_website' => '_shop_website',
   ];
 
   foreach ($fields as $key => $meta_key) {
-      if (isset($_POST[$key])) {
-          update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$key]));
-      }
+    if (isset($_POST[$key])) {
+      update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$key]));
+    }
   }
 }
 add_action('save_post', 'save_shoplist_meta_box');
+
+
+
+
+
+// カスタムフィールドを追加 Products
+function add_products_meta_boxes()
+{
+  add_meta_box(
+    'products_info', // メタボックスID
+    '製品情報', // メタボックスタイトル
+    'display_products_meta_box', // コールバック関数
+    'products', // カスタム投稿タイプ
+    'normal', // 表示場所
+    'high' // 優先度
+  );
+}
+add_action('add_meta_boxes', 'add_products_meta_boxes');
+
+
+// メタボックスの中身を表示
+function display_products_meta_box($post)
+{
+  $code = get_post_meta($post->ID, '_products_code', true);
+  $jattl = get_post_meta($post->ID, '_products_jattl', true);
+  $materials = get_post_meta($post->ID, '_products_materials', true);
+  $alcohol = get_post_meta($post->ID, '_products_alcohol', true);
+  $contents = get_post_meta($post->ID, '_products_contents', true);
+  $save = get_post_meta($post->ID, '_products_save', true);
+  $sell = get_post_meta($post->ID, '_products_sell', true);
+  wp_nonce_field(basename(__FILE__), 'products_nonce');
+?>
+  <p>
+    <label for="products_code">コードネーム</label>
+    <input type="text" id="products_code" name="products_code" value="<?php echo esc_attr($code); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_jattl">日本語タイトル</label>
+    <input type="text" id="products_jattl" name="products_jattl" value="<?php echo esc_attr($jattl); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_materials">原材料</label>
+    <input type="text" id="products_materials" name="products_materials" value="<?php echo esc_attr($materials); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_alcohol">アルコール度数</label>
+    <input type="text" id="products_alcohol" name="products_alcohol" value="<?php echo esc_attr($alcohol); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_contents">内容量</label>
+    <input type="text" id="products_contents" name="products_contents" value="<?php echo esc_attr($contents); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_save">保存方法</label>
+    <input type="text" id="products_save" name="products_save" value="<?php echo esc_attr($save); ?>" style="width: 100%;" />
+  </p>
+  <p>
+    <label for="products_sell">販売</label>
+    <input type="text" id="products_sell" name="products_sell" value="<?php echo esc_attr($sell); ?>" style="width: 100%;" />
+  </p>
+<?php
+}
+
+// カスタムフィールドの保存
+function save_products_meta_box($post_id)
+{
+  if (!isset($_POST['products_nonce']) || !wp_verify_nonce($_POST['products_nonce'], basename(__FILE__))) {
+    return $post_id;
+  }
+
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+    return $post_id;
+  }
+
+  if (!current_user_can('edit_post', $post_id)) {
+    return $post_id;
+  }
+
+  // 各フィールドの保存処理
+  $fields = [
+    'products_code' => '_products_code',
+    'products_jattl' => '_products_jattl',
+    'products_materials' => '_products_materials',
+    'products_alcohol' => '_products_alcohol',
+    'products_contents' => '_products_contents',
+    'products_save' => '_products_save',
+    'products_sell' => '_products_sell',
+  ];
+
+  foreach ($fields as $key => $meta_key) {
+    if (isset($_POST[$key])) {
+      update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$key]));
+    }
+  }
+}
+add_action('save_post', 'save_products_meta_box');
+
+
+
+
+
+
+
+// カスタムフィールドを追加 collection
+function add_collection_meta_boxes()
+{
+  add_meta_box(
+    'collection_info', // メタボックスID
+    'コレクション', // メタボックスタイトル
+    'display_collection_meta_box', // コールバック関数
+    'collection', // カスタム投稿タイプ
+    'normal', // 表示場所
+    'high' // 優先度
+  );
+}
+add_action('add_meta_boxes', 'add_collection_meta_boxes');
+
+
+// メタボックスの中身を表示
+function display_collection_meta_box($post)
+{
+  $code = get_post_meta($post->ID, '_collection_code', true);
+  $btn1 = get_post_meta($post->ID, '_collection_btn1', true);
+  $btn2 = get_post_meta($post->ID, '_collection_btn2', true);
+  wp_nonce_field(basename(__FILE__), 'collection_nonce');
+?>
+  <p>
+    <label for="collection_code">コードネーム</label>
+    <input type="text" id="collection_code" name="collection_code" value="<?php echo esc_attr($code); ?>" style="width: 100%;" />
+  </p>
+<?php
+}
+
+// カスタムフィールドの保存
+function save_collection_meta_box($post_id)
+{
+  if (!isset($_POST['collection_nonce']) || !wp_verify_nonce($_POST['collection_nonce'], basename(__FILE__))) {
+    return $post_id;
+  }
+
+  if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+    return $post_id;
+  }
+
+  if (!current_user_can('edit_post', $post_id)) {
+    return $post_id;
+  }
+
+  // 各フィールドの保存処理
+  $fields = [
+    'collection_code' => '_collection_code',
+  ];
+
+  foreach ($fields as $key => $meta_key) {
+    if (isset($_POST[$key])) {
+      update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$key]));
+    }
+  }
+}
+add_action('save_post', 'save_collection_meta_box');
+
+
+
+
 
 
 /* ****************************
 ショートコード作成
 **************************** */
 // Google Maps iframeを出力するショートコードを作成
-function get_google_maps_embed_without_api($address) {
+function get_google_maps_embed_without_api($address)
+{
   // 住所をURLエンコード
   $encoded_address = urlencode($address);
 
@@ -345,11 +597,12 @@ function get_google_maps_embed_without_api($address) {
 }
 
 // フロントエンドにGoogle Maps iframeを表示
-function display_shop_google_map_without_api() {
+function display_shop_google_map_without_api()
+{
   global $post;
   $address = get_post_meta($post->ID, '_shop_address', true);
-  
+
   if ($address) {
-      echo get_google_maps_embed_without_api($address);
+    echo get_google_maps_embed_without_api($address);
   }
 }
