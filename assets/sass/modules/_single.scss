@@ -15,6 +15,13 @@
         max-width: 780px;
         &__head {
             &--thm {
+                overflow: hidden;
+                max-height: 520px;
+                img {
+                    object-fit: cover;
+                        object-position: center;
+                        height: 520px;
+                }
             }
             .ttl {
                 margin-top: 46px;
@@ -106,6 +113,13 @@
                         margin-right: 0;
                     }
                     .thumb {
+                        overflow: hidden;
+                        max-height: 160px;
+                        img {
+                            height: 160px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
                     }
                     .tArea {
                         margin-top: 11px;
@@ -251,6 +265,13 @@
                             margin-right: 0;
                         }
                         .thumb {
+                            overflow: hidden;
+                            max-height: 160px;
+                            img {
+                                height: 160px;
+                                object-fit: cover;
+                                object-position: center;
+                            }
                         }
                         .tArea {
                             

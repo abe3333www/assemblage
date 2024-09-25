@@ -1071,6 +1071,7 @@ HEADER
       &-ma {
         margin-top: 41px;
         display: block;
+        position: relative;
         &-lft {
           width: 100%;
           margin-top: 0;
@@ -1142,6 +1143,12 @@ HEADER
               }
             }
           }
+        }
+        &-totop {
+          position: absolute;
+          bottom: 15px;
+          right: 0px;
+          width: 25px;
         }
       }
       &-btm {
@@ -1521,6 +1528,9 @@ HEADER
           width: 10px;
           height: 10px;
         }
+        >a {
+          padding-top: 15px;
+        }
       }
       &--top {
         &:before,
@@ -1530,6 +1540,14 @@ HEADER
         }
         &::after {
           top: 5px;
+        }
+        >a {
+          padding-top: 15px;
+        }
+      }
+      &--next {
+        >a {
+          padding-top: 15px;
         }
       }
     }
@@ -1813,3 +1831,6 @@ HEADER
     }
   }
 }
+
+
+

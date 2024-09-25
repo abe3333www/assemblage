@@ -1338,6 +1338,7 @@ HEADER
   .ft_cnt-ma {
     margin-top: 41px;
     display: block;
+    position: relative;
   }
   .ft_cnt-ma-lft {
     width: 100%;
@@ -1401,6 +1402,12 @@ HEADER
   .ft_cnt-ma-rgt-list li a {
     font-size: 1.8rem;
     padding: 1px 1px;
+  }
+  .ft_cnt-ma-totop {
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
+    width: 25px;
   }
   .ft_cnt-btm {
     margin-left: calc(50% - 50vw);
@@ -1812,12 +1819,21 @@ HEADER
     width: 10px;
     height: 10px;
   }
+  .navigation .pager__links--prev > a {
+    padding-top: 15px;
+  }
   .navigation .pager__links--top:before, .navigation .pager__links--top:after {
     width: 10px;
     height: 10px;
   }
   .navigation .pager__links--top::after {
     top: 5px;
+  }
+  .navigation .pager__links--top > a {
+    padding-top: 15px;
+  }
+  .navigation .pager__links--next > a {
+    padding-top: 15px;
   }
   .scrollLink {
     position: absolute;

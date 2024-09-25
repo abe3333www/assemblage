@@ -758,6 +758,7 @@
   font-size: 1.4rem;
   margin-top: 15px;
   line-height: 1.8;
+  height: 48px;
 }
 .topMa_slide .slide-date {
   font-size: 1.4rem;
@@ -793,6 +794,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 .topAb_flex-lft {
   width: 54%;
@@ -828,6 +830,14 @@
 }
 .topAb_flex-rgt {
   width: 36.5%;
+}
+.topAb_flex-rgt-treat {
+  position: absolute;
+  bottom: 0;
+  left: 43%;
+  width: 320px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .topPr {
   margin-top: 200px;
@@ -2064,7 +2074,7 @@
     width: 53%;
     padding-top: 21px;
     position: relative;
-    left: 20px;
+    left: 130px;
   }
   .topAb_flex-rgt-img {
     width: 54%;
@@ -2347,7 +2357,7 @@
     width: 14px;
     height: 14px;
     top: 50%;
-    right: 74px;
+    right: 60px;
   }
   .topRes_btnArea a:not(:first-of-type) {
     margin-top: 10px;
@@ -2458,6 +2468,9 @@
 /* ========================================
  NEWS
  ======================================== */
+.archiveNews {
+  margin-top: 100px;
+}
 .archiveNews__blk {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2520,6 +2533,9 @@
 }
 
 @media only screen and (max-width: 834px) {
+  .archiveNews {
+    margin-top: 50px;
+  }
   .archiveNews__wrap {
     width: 94%;
   }
@@ -2560,6 +2576,9 @@
 /* ========================================
   FAQ
   ======================================== */
+.pageFaq {
+  margin-top: 100px;
+}
 .pageFaq__wrap {
   width: 840px;
   margin-left: auto;
@@ -2644,6 +2663,9 @@
 }
 
 @media only screen and (max-width: 834px) {
+  .pageFaq {
+    margin-top: 50px;
+  }
   .pageFaq__wrap {
     width: 93%;
   }
@@ -2870,6 +2892,9 @@
 /* ========================================
  Cooperation
  ======================================== */
+.pageCooperation {
+  margin-top: 100px;
+}
 .pageCooperation__mainTtl {
   font-size: 3.5rem;
   padding-top: 5px;
@@ -2942,6 +2967,9 @@
 }
 
 @media only screen and (max-width: 834px) {
+  .pageCooperation {
+    margin-top: 50px;
+  }
   .pageCooperation__mainTtl {
     font-size: 1.9rem;
     margin-bottom: 40px;
@@ -6605,8 +6633,7 @@
   height: 30px;
   bottom: 0;
   left: 0;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
-          clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
   background-color: #fff;
 }
 .toC__vo--cnt--list li:after {
@@ -6616,8 +6643,7 @@
   height: 30px;
   bottom: 0;
   left: 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
   background-color: #d9d9d9;
 }
 .toC__vo--cnt--list li:nth-of-type(3n) {
@@ -7538,9 +7564,16 @@
 }
 #ARTICLE .archiveNews__wrap .blk .thumb {
   position: relative;
+  max-height: 260px;
+  overflow: hidden;
 }
 #ARTICLE .archiveNews__wrap .blk .thumb img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  height: 260px;
 }
 #ARTICLE .archiveNews__wrap .blk .thumb .cat {
   position: absolute;
@@ -7793,6 +7826,17 @@
   margin-inline: auto;
   max-width: 780px;
 }
+#SINGLE .singleNews__head--thm {
+  overflow: hidden;
+  max-height: 520px;
+}
+#SINGLE .singleNews__head--thm img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 520px;
+}
 #SINGLE .singleNews__head .ttl {
   margin-top: 46px;
   font-size: 2.4rem;
@@ -7890,6 +7934,17 @@
 }
 #SINGLE .singleNews__relate .rList__item:nth-of-type(3n) {
   margin-right: 0;
+}
+#SINGLE .singleNews__relate .rList__item .thumb {
+  overflow: hidden;
+  max-height: 160px;
+}
+#SINGLE .singleNews__relate .rList__item .thumb img {
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 #SINGLE .singleNews__relate .rList__item .tArea {
   margin-top: 11px;
@@ -7994,6 +8049,17 @@
   }
   #SINGLE .singleNews__relate .rList__item:nth-of-type(2n) {
     margin-right: 0;
+  }
+  #SINGLE .singleNews__relate .rList__item .thumb {
+    overflow: hidden;
+    max-height: 160px;
+  }
+  #SINGLE .singleNews__relate .rList__item .thumb img {
+    height: 160px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
   }
   #SINGLE .singleNews__relate .rList__item .tArea__ttl {
     font-size: 1.1rem;

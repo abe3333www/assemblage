@@ -56,7 +56,7 @@
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <a class="topMa__btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>">Read more</a>
+      <a class="topMa__btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>/magazine/">Read more</a>
     </section>
 
     <section id="TOP-ABOUT" class="topAb">
@@ -67,7 +67,7 @@
             <p class="topAb_flex-lft-txt">Assemblageとは「混ぜ合わせ」を意味するフランス語。<br>ワイン用語では原酒のブレンドを指し、ボルドーなどで行われる伝統技法です。あの複雑な味わいや香りは、異なる原酒の掛け合わせから生まれるのです。<br><br>日本酒においてもこの技法は有効ではないか。小さな閃きは研究と試行錯誤を重ねるにつれ、確信に変わりました。精米歩合や醸造年度など従来の評価基準にとらわれない、純粋な味のみを尺度に構築するアッサンブラージュなら常識を覆す唯一無二の日本酒をお届けできる。<br>それは奇跡的ともいうべき、日本酒の新しい未来の発見でした。</p>
           </div>
           <div class="topAb_flex-rgt">
-            <img class="topAb_flex-rgt-treat sp" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/ab_treat.png">
+            <img class="topAb_flex-rgt-treat" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/ab_treat.png">
             <p class="topAb_flex-rgt-img animeBox"><img class="ivo smoothly" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/ab_img.jpg" alt=""></p>
           </div>
         </div>
@@ -130,7 +130,7 @@
                 </div>
               </div>
             </div>
-            <a class="topPr_btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>">商品詳細はこちら</a>
+            <a class="topPr_btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>/toc/">商品詳細はこちら</a>
           </div>
       <?php
         endwhile;
@@ -259,8 +259,8 @@
         <p>「Assemblage Club 01CODE NAME : Taro’」は、独自のアッサンブラージュ技法によって透き通るような甘さと<br>キリッとした辛さという、かつてない複雑な味わいを実現しました。京都の三つの老舗酒蔵が協力し織り成した唯一無二の味わいは、日本酒に造詣の深い方にもご納得いただけるでしょう。<br>さらに貴店オリジナルの日本酒も夢ではありません。<br class="sp">アッサンブラージュならイチから醸造するより<br>短期間で小ロットの制作が可能。甘・酸・旨・苦など味の足し算、そして香りの掛け算によって<br>貴店の看板料理に寄り添う味の設計は自由自在です。貴店だけのプレミアムな日本酒でメニューを彩ってみては。</p>
       </div>
       <div class="topRes_btnArea">
-        <a class="linkbtn ffEn" href="https://assemblageclub.stores.jp/" target="_blank">飲食店様向け販売ページはこちら</a>
-        <a class="linkbtn ffEn" href="https://sakeworld.jp/abc/tob/" target="_blank">オリジナル日本酒の制作はこちら</a>
+        <a class="linkbtn" href="https://assemblageclub.stores.jp/" target="_blank">飲食店様向け販売ページはこちら</a>
+        <a class="linkbtn" href="<?php echo esc_url(home_url());?>/tob/">オリジナル日本酒の制作はこちら</a>
       </div>
     </section>
     <section id="TOP-HISTORY" class="topCol">

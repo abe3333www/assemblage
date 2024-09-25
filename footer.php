@@ -17,8 +17,8 @@
           <div class="ft_cnt-ma-lft-blk">
             <p class="ft_cnt-ma-lft-blk-ttl -en">News Letter</p>
             <div class="ft_cnt-ma-lft-blk-bArea fCol">
-              <a class="lineBtn pc" href="" target="_blank">Assemblage Club LINE公式アカウントはこちら</a>
-              <a class="lineBtn sp" href="" target="_blank">Assemblage Club公式LINE@はこちら</a>
+              <a class="lineBtn pc">Assemblage Club LINE公式アカウントはこちら</a>
+              <a class="lineBtn sp">Assemblage Club公式LINE@はこちら</a>
               <a class="mlmgBtn" href="" target="_blank">メールマガジン</a>
             </div>
           </div>
@@ -26,15 +26,21 @@
         <nav class="ft_cnt-ma-rgt">
           <ul class="ft_cnt-ma-rgt-list">
             <li><a href="<?php echo esc_url(home_url()); ?>">Top</a></li>
-            <li><a href="<?php echo esc_url(home_url()); ?>">Magazine</a></li>
-            <li><a href="<?php echo esc_url(home_url()); ?>">News</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>/magazine/">Magazine</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>/news/">News</a></li>
           </ul>
           <ul class="ft_cnt-ma-rgt-list">
-            <li><a href="<?php echo esc_url(home_url()); ?>">協力酒造</a></li>
-            <li><a href="<?php echo esc_url(home_url()); ?>">FAQ</a></li>
-            <li><a href="<?php echo esc_url(home_url()); ?>">Contact</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>/cooperation/">協力酒造</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>/faq/">FAQ</a></li>
+            <li><a href="<?php echo esc_url(home_url()); ?>/contact/">Contact</a></li>
           </ul>
         </nav>
+        <!-- totop -->
+        <div class="ft_cnt-ma-totop sp js-totop">
+          <a href="#">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/totop.svg" alt="PAGE TOP" width="25" height="84">
+          </a>
+        </div>
       </div>
       <div class="ft_cnt-btm">
         <div class="ft_cnt-btm-flex">
@@ -46,7 +52,7 @@
             <li><a href="https://assemblageclub.stores.jp/tokushoho" target="_blank">特定商法取引法に基づく表記</a></li>
             <li><a href="https://assemblageclub.stores.jp/privacy_policy" target="_blank">プライバシーポリシー</a></li>
             <li><a href="https://assemblageclub.stores.jp/terms" target="_blank">利⽤規約</a></li>
-            <li><a href="https://assemblageclub.stores.jp/terms" target="_blank">会社概要</a></li>
+            <li><a href="https://leafkyoto.co.jp/" target="_blank">会社概要</a></li>
           </ul>
         </div>
         <div class="ft_cnt-btm-sns">
@@ -84,12 +90,10 @@
 
 
 
-
-  <footer class="ft" style="display: none;">
+  <!-- <footer class="ft" style="display: none;">
     <div class="ft__wrap">
       <div class="ft__lft">
         <a class="ft__lft--logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_ft.png" alt="Assemblage Club"></a>
-        <!-- <p class="ft__lft--copy">@ M KYOTO Online Store</p> -->
         <ul class="ft__lft--ul">
           <li class="ft__lft--li"><a class="ft__lft--li--blank" href="https://assemblageclub.stores.jp/terms" target="_blank">利⽤規約</a></li>
           <li class="ft__lft--li"><a class="ft__lft--li--blank" href="https://assemblageclub.stores.jp/tokushoho" target="_blank">特定商法取引表記</a></li>
@@ -110,7 +114,7 @@
 
       </div>
     </div>
-  </footer>
+  </footer> -->
 <?php endif; ?>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" charset="utf-8"></script>
@@ -128,7 +132,7 @@
 <?php if (is_post_type_archive('magazine')) : ?>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/archive.js" charset="utf-8"></script>
 <?php endif; ?>
-<?php if ( is_archive() ) :?>
+<?php if (is_archive()) : ?>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/archive.js" charset="utf-8"></script>
 <?php endif; ?>
 

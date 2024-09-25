@@ -712,6 +712,7 @@
                 font-size: 1.4rem;
                 margin-top: 15px;
                 line-height: 1.8;
+                height: 48px;
             }
             .slide-date {
                 font-size: 1.4rem;
@@ -745,6 +746,7 @@
         &_flex {
             display: flex;
             justify-content: space-between;
+            position: relative;
             &-lft {
                 width: 54%;
                 margin-top: 84px;
@@ -777,6 +779,13 @@
             }
             &-rgt {
                 width: 36.5%;
+                &-treat {
+                    position: absolute;
+                    bottom: 0;
+                    left: 43%;
+                    width: 320px;
+                    transform: translateX(-50%);
+                }
             }
         }
     }
@@ -1981,11 +1990,10 @@
                     margin-left: auto;
                     position: relative;
                     &-treat {
-                        // width: 203px;
                         width: 53%;
                         padding-top: 21px;
                         position: relative;
-                        left: 20px;
+                        left: 130px;
                     }
                     &-img {
                         width: 54%;
@@ -2290,7 +2298,7 @@
                             width: 14px;
                             height: 14px;
                             top: 50%;
-                            right: 74px;
+                            right: 60px;
                         }
                     }
                     &:not(:first-of-type) {
@@ -2428,6 +2436,7 @@
  NEWS
  ======================================== */
 .archiveNews {
+    margin-top: 100px;
     &__blk {
         display: flex;
         font-size: 1.4rem;
@@ -2495,6 +2504,7 @@
 }
 @media only screen and (max-width: 834px) {
     .archiveNews {
+        margin-top: 50px;
         &__wrap {
             width: 94%;
         }
@@ -2544,6 +2554,7 @@
   FAQ
   ======================================== */
 .pageFaq {
+    margin-top: 100px;
     &__wrap {
         width: 840px;
         margin-left: auto;
@@ -2633,6 +2644,7 @@
 }
 @media only screen and (max-width: 834px) {
     .pageFaq {
+        margin-top: 50px;
         &__wrap {
             width: 93%;
         }
