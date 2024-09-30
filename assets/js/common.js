@@ -117,9 +117,9 @@ $(function () {
 		  var endPos = targetPos;
 	  
 		  if ($(window).width() > 768) {
-			  endPos -= 0;
+			  endPos -= 150;
 		  } else {
-			  endPos -= 0;
+			  endPos -= 75;
 		  }
 	  
 	  $('html, body').animate({scrollTop:endPos}, 500, 'swing');
@@ -215,9 +215,9 @@ const topMaSwiper = new Swiper('.js-topMaSwiper', {
 	speed: 1000,
 	// autoHeight: true,
 	// effect: "fade",
-	autoplay: {
-	  disableOnInteraction: false,
-	},
+	// autoplay: {
+	//   disableOnInteraction: false,
+	// },
 
 	// ページネーション
 	pagination: {

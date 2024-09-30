@@ -2,7 +2,7 @@
 
 <!-- CONTAINER -->
 <main id="ARTICLE" class="shoplist"><!-- 最大幅 -->
-  <div class="article__ttl ffEn">
+  <div class="article__ttl">
     <h1>取り扱い店舗様</h1>
   </div>
   <section id="ARCHIVE-NEWS" class="archiveShop">

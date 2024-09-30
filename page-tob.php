@@ -250,10 +250,8 @@
                         <p class="tArea__txt">お問い合わせから納品まで約3ヶ⽉いただいております。（※ご注文本数や状況により前後する可能性がございます）<br>まずはどのような日本酒を作りたいかをヒアリング、貴店の料理や日本酒へのこだわりを伺います。その後、特任チームによるオリジナル酒のサンプルづくり。ラベルのデザインも提案いたします。ご了承をいただいたら製造開始。あなたのお店だけのオンリーワンの日本酒をお届けいたします。</p>
                     </div>
                     <div class="treatBox">
-                        <picture>
-                            <source media="(min-width: 835px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tob/how_treat1.svg">
-                            <img class="treat1" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tob/how_treat1_sp.svg" alt="01　お問い合せ 02　お打ち合わせ 03　お見積り 04　お酒・ラベルデザインの決定 05　製造・納品">
-                        </picture>
+                        <img class="pc" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tob/how_treat1.svg">
+                        <img class="treat1 sp" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/tob/how_treat1_sp.svg" alt="01　お問い合せ 02　お打ち合わせ 03　お見積り 04　お酒・ラベルデザインの決定 05　製造・納品">
                         <p class="treatTxt">※およそ3ヶ月〜</p>
                     </div>
                 </div>

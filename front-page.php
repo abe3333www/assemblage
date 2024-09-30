@@ -17,7 +17,7 @@
             <?php
             $args = array(
               'post_type' => 'magazine',
-              'posts_per_page' => -1,
+              'posts_per_page' => 6,
             );
             $magazine_query = new WP_Query($args);
             if ($magazine_query->have_posts()) :
@@ -94,7 +94,7 @@
           $save = get_post_meta(get_the_ID(), '_products_save', true);
           $sell = get_post_meta(get_the_ID(), '_products_sell', true);
       ?>
-          <div class="topPr_cnt cmnSecLeftCnt">
+          <div id="TOP-PRODUCTS" class="topPr_cnt cmnSecLeftCnt">
             <h2 class="topPr_cnt-ttl comTopTtl ffEn">Products</h2>
             <div class="topPr_cnt-flex">
               <div class="thumb">
@@ -259,7 +259,7 @@
         <p>「Assemblage Club 01CODE NAME : Taro’」は、独自のアッサンブラージュ技法によって透き通るような甘さと<br>キリッとした辛さという、かつてない複雑な味わいを実現しました。京都の三つの老舗酒蔵が協力し織り成した唯一無二の味わいは、日本酒に造詣の深い方にもご納得いただけるでしょう。<br>さらに貴店オリジナルの日本酒も夢ではありません。<br class="sp">アッサンブラージュならイチから醸造するより<br>短期間で小ロットの制作が可能。甘・酸・旨・苦など味の足し算、そして香りの掛け算によって<br>貴店の看板料理に寄り添う味の設計は自由自在です。貴店だけのプレミアムな日本酒でメニューを彩ってみては。</p>
       </div>
       <div class="topRes_btnArea">
-        <a class="linkbtn" href="https://assemblageclub.stores.jp/" target="_blank">飲食店様向け販売ページはこちら</a>
+        <a class="linkbtn -wht" href="https://assemblageclub.stores.jp/" target="_blank">飲食店様向け販売ページはこちら</a>
         <a class="linkbtn" href="<?php echo esc_url(home_url());?>/tob/">オリジナル日本酒の制作はこちら</a>
       </div>
     </section>
@@ -342,11 +342,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px",
                                       "padding-left": "67px",
@@ -366,7 +366,7 @@
                                     "price": false
                                   },
                                   "text": {
-                                    "button": "720ml ご購入はこちら"
+                                      "button": getButtonTextBasedOnUrl()
                                   }
                                 },
                                 "productSet": {
@@ -399,11 +399,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px",
                                       "padding-left": "67px",
@@ -428,11 +428,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px"
                                     }
@@ -451,10 +451,10 @@
                                       "font-family": "Times New Roman, serif",
                                       "background-color": "#000000",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       }
                                     },
                                     "count": {
@@ -465,6 +465,18 @@
                               },
                             });
                           });
+                        }
+                        function getButtonTextBasedOnUrl() {
+                          var path = window.location.pathname;
+                          if (path.includes('/en/')) {
+                            return "Click here to purchase 720ml";
+                          } else if (path.includes('/cn/')) {
+                            return "点此购入 720ml";
+                          } else if (path.includes('/ct/')) {
+                            return "點此購入 720ml";
+                          } else {
+                            return "720ml ご購入はこちら";
+                          }
                         }
                       })();
                       /*]]>*/
@@ -519,11 +531,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px",
                                       "padding-left": "67px",
@@ -543,7 +555,7 @@
                                     "price": false
                                   },
                                   "text": {
-                                    "button": "180ml ご購入はこちら"
+                                      "button": getButtonTextBasedOnUrl()
                                   }
                                 },
                                 "productSet": {
@@ -576,11 +588,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px",
                                       "padding-left": "67px",
@@ -605,11 +617,11 @@
                                       "padding-top": "15px",
                                       "padding-bottom": "15px",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "background-color": "#000000",
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       "border-radius": "0px"
                                     }
@@ -628,10 +640,10 @@
                                       "font-family": "Times New Roman, serif",
                                       "background-color": "#000000",
                                       ":hover": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       },
                                       ":focus": {
-                                        "background-color": "#000000"
+                                        "background-color": "#707070"
                                       }
                                     },
                                     "count": {
@@ -642,6 +654,18 @@
                               },
                             });
                           });
+                        }
+                        function getButtonTextBasedOnUrl() {
+                          var path = window.location.pathname;
+                          if (path.includes('/en/')) {
+                            return "Click here to purchase 180ml";
+                          } else if (path.includes('/cn/')) {
+                            return "点此购入 180ml";
+                          } else if (path.includes('/ct/')) {
+                            return "點此購入 180ml";
+                          } else {
+                            return "180ml ご購入はこちら";
+                          }
                         }
                       })();
                       /*]]>*/

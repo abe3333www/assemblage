@@ -68,17 +68,17 @@
           <?php if (!is_page('toc')) : ?>
             <div class="hd__wrap pc">
               <a class="hd__logo hdTc__logo " href="<?php echo site_url(); ?>">
-                <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_cmn_hd_blk.png" alt="Assemblage Club"></p>
+                <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_cmn_hd_wht.png" alt="Assemblage Club"></p>
               </a>
               <div class="humBtn"><span></span></div>
               <nav class="hd__nav">
                 <ul class="hd__nav--ul">
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/">Top</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/toc/" target="_blank">Products</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-PRODUCTS">Products</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/news/">News</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
                 </ul>
@@ -88,9 +88,17 @@
             </div>
             <!-- HEADER -->
             <a class="hd__logo hdCmn__logo sp js-logoCom" href="<?php echo site_url(); ?>">
-              <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_cmn_hd_blk.png" alt="Assemblage Club"></p>
+              <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_cmn_hd_wht.png" alt="Assemblage Club"></p>
             </a>
-            <header class="hdCmn sp js-navCom">
+            <div class="hdCmn__hb js-hbCmn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          <?php endif; ?>
+        </header>
+
+        <header class="hdCmn sp js-navCom">
               <nav class="">
                 <div class="hdCmn__close js-closeCom">
                   <span></span>
@@ -100,27 +108,21 @@
                   <li id="language-switcher" class="liSw sp"><?php echo do_shortcode('[language-switcher]'); ?></li>
                   <li><a href="<?php echo site_url(); ?>/">Top</a></li>
                   <li><a href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
-                  <li><a href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
-                  <li><a href="<?php echo site_url(); ?>/toc/" target="_blank">Products</a></li>
+                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
+                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-PRODUCTS">Products</a></li>
                   <li><a href="<?php echo site_url(); ?>/news/">News</a></li>
-                  <li><a href="<?php if(!is_home()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
+                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
                   <li><a href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
                   <li><a href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
                 </ul>
               </nav>
             </header>
-            <div class="hdCmn__hb js-hbCmn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          <?php endif; ?>
-        </header>
+            
         <?php if (!is_page('toc')) : ?>
           <!-- //HEADER -->
           <div id="language-switcher" class="language-switcher pc"><?php echo do_shortcode('[language-switcher]'); ?></div>
 
-          <div class="fixedShop js-fixProducts"> <a href="#">Products</a></div>
+          <?php if (is_front_page()) : ?><div class="fixedShop js-fixProducts"> <a href="#TOP-PRODUCTS">Products</a></div><?php endif; ?>
         <?php endif; ?>
 
       <?php endif; ?>

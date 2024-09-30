@@ -684,13 +684,13 @@
                 align-items: flex-end;
             }
             .swiper-slide {
-            }
-            @media screen and (min-width: 769px) {
-                .swiper-slide-active {
-                    width: 35% !important;
-                    margin-right: 11px;
-                    a {
-                        width: 100%;
+                @media screen and (min-width: 769px) {
+                    &:first-of-type {
+                        width: 35% !important;
+                        margin-right: 11px;
+                        a {
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -719,7 +719,7 @@
                 margin-top: 2px;
             }
             .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-                width: 73.7%;
+                width: calc(100% - 4rem * 8);
                 height: 2px;
                 left: unset;
                 right: 50px;
@@ -1192,6 +1192,12 @@
                         background-size: contain;
                         background-repeat: no-repeat;
                     }
+                }
+                @media screen and (min-width: 769px) {
+                  &:hover {
+                    opacity: 1;
+                    background:#707070;
+                  }
                 }
             }
         }
@@ -1930,10 +1936,10 @@
                 .swiper-wrapper {
                 }
                 .swiper-slide {
-                }
-                .swiper-slide-active {
-                    a {
-                        width: 100%;
+                    &:first-of-type {
+                        a {
+                            width: 100%;
+                        }
                     }
                 }
                 .slide-image {
@@ -1946,7 +1952,7 @@
                 }
             }
             .swiper-horizontal > .swiper-pagination-progressbar, .topMa_slide .swiper-pagination-progressbar.swiper-pagination-horizontal, .topMa_slide .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .topMa_slide .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-                width: 52.7%;
+                width: calc(100% - 2.5rem * 8);
                 height: 2px;
                 left: unset;
                 right: 25px;

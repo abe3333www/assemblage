@@ -730,11 +730,11 @@
           align-items: flex-end;
 }
 @media screen and (min-width: 769px) {
-  .topMa_slide .swiper-slide-active {
+  .topMa_slide .swiper-slide:first-of-type {
     width: 35% !important;
     margin-right: 11px;
   }
-  .topMa_slide .swiper-slide-active a {
+  .topMa_slide .swiper-slide:first-of-type a {
     width: 100%;
   }
 }
@@ -765,7 +765,7 @@
   margin-top: 2px;
 }
 .topMa_slide .swiper-horizontal > .swiper-pagination-progressbar, .topMa_slide .swiper-pagination-progressbar.swiper-pagination-horizontal, .topMa_slide .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .topMa_slide .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-  width: 73.7%;
+  width: calc(100% - 32rem);
   height: 2px;
   left: unset;
   right: 50px;
@@ -1267,6 +1267,12 @@
   background-image: url(../img/top/icon_window.svg);
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 769px) {
+  .topRes_btnArea a:hover {
+    opacity: 1;
+    background: #707070;
+  }
 }
 .topCol {
   margin-top: 199px;
@@ -2024,11 +2030,11 @@
   .topMa_slide a {
     width: 90%;
   }
-  .topMa_slide .swiper-slide-active a {
+  .topMa_slide .swiper-slide:first-of-type a {
     width: 100%;
   }
   .topMa .swiper-horizontal > .swiper-pagination-progressbar, .topMa .topMa_slide .swiper-pagination-progressbar.swiper-pagination-horizontal, .topMa .topMa_slide .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .topMa .topMa_slide .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
-    width: 52.7%;
+    width: calc(100% - 20rem);
     height: 2px;
     left: unset;
     right: 25px;
@@ -8009,6 +8015,10 @@
     padding-right: 0;
     padding-bottom: 70px;
     width: calc(100% - 55px);
+  }
+  #SINGLE .singleNews__head--thm img {
+    width: 100%;
+    height: auto;
   }
   #SINGLE .singleNews__head .ttl {
     margin-top: 25px;

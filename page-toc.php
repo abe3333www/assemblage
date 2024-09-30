@@ -75,359 +75,8 @@
                                 日本酒の世界においては革新的なアッサンブラージュ技法によって、甘味・辛味・苦味・酸味・うま味のバランスをコントロール。<br>瑞々しい透き通るような甘さとキリッとした辛さが混ざり合い、従来の日本酒の常識を覆す奥深い味わいです。国際的な日本酒コンペティション「SINGAPORE SAKE CHALLENGE 2023」で「Taro※」が金賞を受賞、海外でも高い評価を得ています。<span>※ 「Taro’」は「Taro」を火入れしたもの。</span>
                             </p>
                             <div class="tArea__btn">
-                                <div id='product-component-1722991911614'></div>
-                                <script type="text/javascript">
-                                    /*<![CDATA[*/
-                                    (function() {
-                                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                                        if (window.ShopifyBuy) {
-                                            if (window.ShopifyBuy.UI) {
-                                                ShopifyBuyInit();
-                                            } else {
-                                                loadScript();
-                                            }
-                                        } else {
-                                            loadScript();
-                                        }
-
-                                        function loadScript() {
-                                            var script = document.createElement('script');
-                                            script.async = true;
-                                            script.src = scriptURL;
-                                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                            script.onload = ShopifyBuyInit;
-                                        }
-
-                                        function ShopifyBuyInit() {
-                                            var client = ShopifyBuy.buildClient({
-                                                domain: 'f43f0b-80.myshopify.com',
-                                                storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                            });
-                                            ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                                ui.createComponent('product', {
-                                                    id: '8520581644510',
-                                                    node: document.getElementById('product-component-1722991911614'),
-                                                    moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                                    options: {
-                                                        "product": {
-                                                            "styles": {
-                                                                "product": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "max-width": "calc(25% - 20px)",
-                                                                        "margin-left": "20px",
-                                                                        "margin-bottom": "50px"
-                                                                    }
-                                                                },
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px",
-                                                                    "padding-left": "67px",
-                                                                    "padding-right": "67px",
-                                                                    "width": "100%",
-                                                                    "font-size": "18px",
-                                                                },
-                                                                "quantityInput": {
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px"
-                                                                }
-                                                            },
-                                                            "contents": {
-                                                                "img": false,
-                                                                "title": false,
-                                                                "price": false
-                                                            },
-                                                            "text": {
-                                                                "button": "720ml ご購入はこちら"
-                                                            }
-                                                        },
-                                                        "productSet": {
-                                                            "styles": {
-                                                                "products": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "margin-left": "-20px"
-                                                                    }
-                                                                }
-                                                            }
-                                                        },
-                                                        "modalProduct": {
-                                                            "contents": {
-                                                                "img": false,
-                                                                "imgWithCarousel": true,
-                                                                "button": false,
-                                                                "buttonWithQuantity": true
-                                                            },
-                                                            "styles": {
-                                                                "product": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "max-width": "100%",
-                                                                        "margin-left": "0px",
-                                                                        "margin-bottom": "0px"
-                                                                    }
-                                                                },
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px",
-                                                                    "padding-left": "67px",
-                                                                    "padding-right": "67px"
-                                                                },
-                                                                "quantityInput": {
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px"
-                                                                }
-                                                            },
-                                                            "text": {
-                                                                "button": "Add to cart"
-                                                            }
-                                                        },
-                                                        "option": {},
-                                                        "cart": {
-                                                            "styles": {
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px"
-                                                                }
-                                                            },
-                                                            "text": {
-                                                                "title": "買い物かご",
-                                                                "total": "小計",
-                                                                "empty": "カートを空にする",
-                                                                "notice": "",
-                                                                "button": "購入する"
-                                                            }
-                                                        },
-                                                        "toggle": {
-                                                            "styles": {
-                                                                "toggle": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "background-color": "#000000",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    }
-                                                                },
-                                                                "count": {
-                                                                    "font-size": "14px"
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                });
-                                            });
-                                        }
-                                    })();
-                                    /*]]>*/
-                                </script>
-
-                                <div id='product-component-1722991814353'></div>
-                                <script type="text/javascript">
-                                    /*<![CDATA[*/
-                                    (function() {
-                                        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                                        if (window.ShopifyBuy) {
-                                            if (window.ShopifyBuy.UI) {
-                                                ShopifyBuyInit();
-                                            } else {
-                                                loadScript();
-                                            }
-                                        } else {
-                                            loadScript();
-                                        }
-
-                                        function loadScript() {
-                                            var script = document.createElement('script');
-                                            script.async = true;
-                                            script.src = scriptURL;
-                                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                            script.onload = ShopifyBuyInit;
-                                        }
-
-                                        function ShopifyBuyInit() {
-                                            var client = ShopifyBuy.buildClient({
-                                                domain: 'f43f0b-80.myshopify.com',
-                                                storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                            });
-                                            ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                                ui.createComponent('product', {
-                                                    id: '8613730320606',
-                                                    node: document.getElementById('product-component-1722991814353'),
-                                                    moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                                    options: {
-                                                        "product": {
-                                                            "styles": {
-                                                                "product": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "max-width": "calc(25% - 20px)",
-                                                                        "margin-left": "20px",
-                                                                        "margin-bottom": "50px"
-                                                                    }
-                                                                },
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px",
-                                                                    "padding-left": "67px",
-                                                                    "padding-right": "67px",
-                                                                    "width": "100%",
-                                                                    "font-size": "18px",
-                                                                },
-                                                                "quantityInput": {
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px"
-                                                                }
-                                                            },
-                                                            "contents": {
-                                                                "img": false,
-                                                                "title": false,
-                                                                "price": false
-                                                            },
-                                                            "text": {
-                                                                "button": "180ml ご購入はこちら"
-                                                            }
-                                                        },
-                                                        "productSet": {
-                                                            "styles": {
-                                                                "products": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "margin-left": "-20px"
-                                                                    }
-                                                                }
-                                                            }
-                                                        },
-                                                        "modalProduct": {
-                                                            "contents": {
-                                                                "img": false,
-                                                                "imgWithCarousel": true,
-                                                                "button": false,
-                                                                "buttonWithQuantity": true
-                                                            },
-                                                            "styles": {
-                                                                "product": {
-                                                                    "@media (min-width: 601px)": {
-                                                                        "max-width": "100%",
-                                                                        "margin-left": "0px",
-                                                                        "margin-bottom": "0px"
-                                                                    }
-                                                                },
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px",
-                                                                    "padding-left": "67px",
-                                                                    "padding-right": "67px"
-                                                                },
-                                                                "quantityInput": {
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px"
-                                                                }
-                                                            },
-                                                            "text": {
-                                                                "button": "Add to cart"
-                                                            }
-                                                        },
-                                                        "option": {},
-                                                        "cart": {
-                                                            "styles": {
-                                                                "button": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "font-size": "14px",
-                                                                    "padding-top": "15px",
-                                                                    "padding-bottom": "15px",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "background-color": "#000000",
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    "border-radius": "0px"
-                                                                }
-                                                            },
-                                                            "text": {
-                                                                "title": "買い物かご",
-                                                                "total": "小計",
-                                                                "empty": "カートを空にする",
-                                                                "notice": "",
-                                                                "button": "購入する"
-                                                            }
-                                                        },
-                                                        "toggle": {
-                                                            "styles": {
-                                                                "toggle": {
-                                                                    "font-family": "Times New Roman, serif",
-                                                                    "background-color": "#000000",
-                                                                    ":hover": {
-                                                                        "background-color": "#000000"
-                                                                    },
-                                                                    ":focus": {
-                                                                        "background-color": "#000000"
-                                                                    }
-                                                                },
-                                                                "count": {
-                                                                    "font-size": "14px"
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                });
-                                            });
-                                        }
-                                    })();
-                                    /*]]>*/
-                                </script>
+                                <div class='product-component-720 js-shop-btn720'></div>
+                                <div class='product-component-180 js-shop-btn180'></div>
                             </div>
                         </div>
                     </div>
@@ -551,359 +200,8 @@
                     </div>
                 </div>
                 <div class="toc__main--cnt--btn">
-                    <div id='product-component-1722991911614_2'></div>
-                    <script type="text/javascript">
-                        /*<![CDATA[*/
-                        (function() {
-                            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                            if (window.ShopifyBuy) {
-                                if (window.ShopifyBuy.UI) {
-                                    ShopifyBuyInit();
-                                } else {
-                                    loadScript();
-                                }
-                            } else {
-                                loadScript();
-                            }
-
-                            function loadScript() {
-                                var script = document.createElement('script');
-                                script.async = true;
-                                script.src = scriptURL;
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                script.onload = ShopifyBuyInit;
-                            }
-
-                            function ShopifyBuyInit() {
-                                var client = ShopifyBuy.buildClient({
-                                    domain: 'f43f0b-80.myshopify.com',
-                                    storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                });
-                                ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                    ui.createComponent('product', {
-                                        id: '8520581644510',
-                                        node: document.getElementById('product-component-1722991911614_2'),
-                                        moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                        options: {
-                                            "product": {
-                                                "styles": {
-                                                    "product": {
-                                                        "@media (min-width: 601px)": {
-                                                            "max-width": "calc(25% - 20px)",
-                                                            "margin-left": "20px",
-                                                            "margin-bottom": "50px"
-                                                        }
-                                                    },
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px",
-                                                        "padding-left": "67px",
-                                                        "padding-right": "67px",
-                                                        "width": "100%",
-                                                        "font-size": "18px",
-                                                    },
-                                                    "quantityInput": {
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px"
-                                                    }
-                                                },
-                                                "contents": {
-                                                    "img": false,
-                                                    "title": false,
-                                                    "price": false
-                                                },
-                                                "text": {
-                                                    "button": "720ml ご購入はこちら"
-                                                }
-                                            },
-                                            "productSet": {
-                                                "styles": {
-                                                    "products": {
-                                                        "@media (min-width: 601px)": {
-                                                            "margin-left": "-20px"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "modalProduct": {
-                                                "contents": {
-                                                    "img": false,
-                                                    "imgWithCarousel": true,
-                                                    "button": false,
-                                                    "buttonWithQuantity": true
-                                                },
-                                                "styles": {
-                                                    "product": {
-                                                        "@media (min-width: 601px)": {
-                                                            "max-width": "100%",
-                                                            "margin-left": "0px",
-                                                            "margin-bottom": "0px"
-                                                        }
-                                                    },
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px",
-                                                        "padding-left": "67px",
-                                                        "padding-right": "67px"
-                                                    },
-                                                    "quantityInput": {
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px"
-                                                    }
-                                                },
-                                                "text": {
-                                                    "button": "Add to cart"
-                                                }
-                                            },
-                                            "option": {},
-                                            "cart": {
-                                                "styles": {
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px"
-                                                    }
-                                                },
-                                                "text": {
-                                                    "title": "買い物かご",
-                                                    "total": "小計",
-                                                    "empty": "カートを空にする",
-                                                    "notice": "",
-                                                    "button": "購入する"
-                                                }
-                                            },
-                                            "toggle": {
-                                                "styles": {
-                                                    "toggle": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "background-color": "#000000",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        }
-                                                    },
-                                                    "count": {
-                                                        "font-size": "14px"
-                                                    }
-                                                }
-                                            }
-                                        },
-                                    });
-                                });
-                            }
-                        })();
-                        /*]]>*/
-                    </script>
-
-                    <div id='product-component-1722991814353_2'></div>
-                    <script type="text/javascript">
-                        /*<![CDATA[*/
-                        (function() {
-                            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                            if (window.ShopifyBuy) {
-                                if (window.ShopifyBuy.UI) {
-                                    ShopifyBuyInit();
-                                } else {
-                                    loadScript();
-                                }
-                            } else {
-                                loadScript();
-                            }
-
-                            function loadScript() {
-                                var script = document.createElement('script');
-                                script.async = true;
-                                script.src = scriptURL;
-                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                script.onload = ShopifyBuyInit;
-                            }
-
-                            function ShopifyBuyInit() {
-                                var client = ShopifyBuy.buildClient({
-                                    domain: 'f43f0b-80.myshopify.com',
-                                    storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                });
-                                ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                    ui.createComponent('product', {
-                                        id: '8613730320606',
-                                        node: document.getElementById('product-component-1722991814353_2'),
-                                        moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                        options: {
-                                            "product": {
-                                                "styles": {
-                                                    "product": {
-                                                        "@media (min-width: 601px)": {
-                                                            "max-width": "calc(25% - 20px)",
-                                                            "margin-left": "20px",
-                                                            "margin-bottom": "50px"
-                                                        }
-                                                    },
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px",
-                                                        "padding-left": "67px",
-                                                        "padding-right": "67px",
-                                                        "width": "100%",
-                                                        "font-size": "18px",
-                                                    },
-                                                    "quantityInput": {
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px"
-                                                    }
-                                                },
-                                                "contents": {
-                                                    "img": false,
-                                                    "title": false,
-                                                    "price": false
-                                                },
-                                                "text": {
-                                                    "button": "180ml ご購入はこちら"
-                                                }
-                                            },
-                                            "productSet": {
-                                                "styles": {
-                                                    "products": {
-                                                        "@media (min-width: 601px)": {
-                                                            "margin-left": "-20px"
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "modalProduct": {
-                                                "contents": {
-                                                    "img": false,
-                                                    "imgWithCarousel": true,
-                                                    "button": false,
-                                                    "buttonWithQuantity": true
-                                                },
-                                                "styles": {
-                                                    "product": {
-                                                        "@media (min-width: 601px)": {
-                                                            "max-width": "100%",
-                                                            "margin-left": "0px",
-                                                            "margin-bottom": "0px"
-                                                        }
-                                                    },
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px",
-                                                        "padding-left": "67px",
-                                                        "padding-right": "67px"
-                                                    },
-                                                    "quantityInput": {
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px"
-                                                    }
-                                                },
-                                                "text": {
-                                                    "button": "Add to cart"
-                                                }
-                                            },
-                                            "option": {},
-                                            "cart": {
-                                                "styles": {
-                                                    "button": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "font-size": "14px",
-                                                        "padding-top": "15px",
-                                                        "padding-bottom": "15px",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "background-color": "#000000",
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        "border-radius": "0px"
-                                                    }
-                                                },
-                                                "text": {
-                                                    "title": "買い物かご",
-                                                    "total": "小計",
-                                                    "empty": "カートを空にする",
-                                                    "notice": "",
-                                                    "button": "購入する"
-                                                }
-                                            },
-                                            "toggle": {
-                                                "styles": {
-                                                    "toggle": {
-                                                        "font-family": "Times New Roman, serif",
-                                                        "background-color": "#000000",
-                                                        ":hover": {
-                                                            "background-color": "#000000"
-                                                        },
-                                                        ":focus": {
-                                                            "background-color": "#000000"
-                                                        }
-                                                    },
-                                                    "count": {
-                                                        "font-size": "14px"
-                                                    }
-                                                }
-                                            }
-                                        },
-                                    });
-                                });
-                            }
-                        })();
-                        /*]]>*/
-                    </script>
+                    <div class='product-component-720 js-shop-btn720'></div>
+                    <div class='product-component-180 js-shop-btn180'></div>
                 </div>
             </div>
             <section class="toc__ap js-ap">
@@ -1019,182 +317,7 @@
                                     <dd>株式会社リーフ・パブリケーションズ</dd>
                                 </dl>
                             </div>
-                            <div id='product-component-1722991911614_3'></div>
-                            <script type="text/javascript">
-                                /*<![CDATA[*/
-                                (function() {
-                                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                                    if (window.ShopifyBuy) {
-                                        if (window.ShopifyBuy.UI) {
-                                            ShopifyBuyInit();
-                                        } else {
-                                            loadScript();
-                                        }
-                                    } else {
-                                        loadScript();
-                                    }
-
-                                    function loadScript() {
-                                        var script = document.createElement('script');
-                                        script.async = true;
-                                        script.src = scriptURL;
-                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                        script.onload = ShopifyBuyInit;
-                                    }
-
-                                    function ShopifyBuyInit() {
-                                        var client = ShopifyBuy.buildClient({
-                                            domain: 'f43f0b-80.myshopify.com',
-                                            storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                        });
-                                        ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                            ui.createComponent('product', {
-                                                id: '8520581644510',
-                                                node: document.getElementById('product-component-1722991911614_3'),
-                                                moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                                options: {
-                                                    "product": {
-                                                        "styles": {
-                                                            "product": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "max-width": "calc(25% - 20px)",
-                                                                    "margin-left": "20px",
-                                                                    "margin-bottom": "50px"
-                                                                }
-                                                            },
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px",
-                                                                "padding-left": "67px",
-                                                                "padding-right": "67px",
-                                                                "width": "100%",
-                                                                "font-size": "18px",
-                                                            },
-                                                            "quantityInput": {
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px"
-                                                            }
-                                                        },
-                                                        "contents": {
-                                                            "img": false,
-                                                            "title": false,
-                                                            "price": false
-                                                        },
-                                                        "text": {
-                                                            "button": "720ml ご購入はこちら"
-                                                        }
-                                                    },
-                                                    "productSet": {
-                                                        "styles": {
-                                                            "products": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "margin-left": "-20px"
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                    "modalProduct": {
-                                                        "contents": {
-                                                            "img": false,
-                                                            "imgWithCarousel": true,
-                                                            "button": false,
-                                                            "buttonWithQuantity": true
-                                                        },
-                                                        "styles": {
-                                                            "product": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "max-width": "100%",
-                                                                    "margin-left": "0px",
-                                                                    "margin-bottom": "0px"
-                                                                }
-                                                            },
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px",
-                                                                "padding-left": "67px",
-                                                                "padding-right": "67px"
-                                                            },
-                                                            "quantityInput": {
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px"
-                                                            }
-                                                        },
-                                                        "text": {
-                                                            "button": "Add to cart"
-                                                        }
-                                                    },
-                                                    "option": {},
-                                                    "cart": {
-                                                        "styles": {
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px"
-                                                            }
-                                                        },
-                                                        "text": {
-                                                            "title": "買い物かご",
-                                                            "total": "小計",
-                                                            "empty": "カートを空にする",
-                                                            "notice": "",
-                                                            "button": "購入する"
-                                                        }
-                                                    },
-                                                    "toggle": {
-                                                        "styles": {
-                                                            "toggle": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "background-color": "#000000",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                }
-                                                            },
-                                                            "count": {
-                                                                "font-size": "14px"
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                            });
-                                        });
-                                    }
-                                })();
-                                /*]]>*/
-                            </script>
+                            <div class='product-component-720 js-shop-btn720'></div>
                         </div>
                     </div>
                     <div class="blk">
@@ -1222,183 +345,7 @@
                                     <dd>株式会社リーフ・パブリケーションズ</dd>
                                 </dl>
                             </div>
-
-                            <div id='product-component-1722991814353_3'></div>
-                            <script type="text/javascript">
-                                /*<![CDATA[*/
-                                (function() {
-                                    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-                                    if (window.ShopifyBuy) {
-                                        if (window.ShopifyBuy.UI) {
-                                            ShopifyBuyInit();
-                                        } else {
-                                            loadScript();
-                                        }
-                                    } else {
-                                        loadScript();
-                                    }
-
-                                    function loadScript() {
-                                        var script = document.createElement('script');
-                                        script.async = true;
-                                        script.src = scriptURL;
-                                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-                                        script.onload = ShopifyBuyInit;
-                                    }
-
-                                    function ShopifyBuyInit() {
-                                        var client = ShopifyBuy.buildClient({
-                                            domain: 'f43f0b-80.myshopify.com',
-                                            storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
-                                        });
-                                        ShopifyBuy.UI.onReady(client).then(function(ui) {
-                                            ui.createComponent('product', {
-                                                id: '8613730320606',
-                                                node: document.getElementById('product-component-1722991814353_3'),
-                                                moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
-                                                options: {
-                                                    "product": {
-                                                        "styles": {
-                                                            "product": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "max-width": "calc(25% - 20px)",
-                                                                    "margin-left": "20px",
-                                                                    "margin-bottom": "50px"
-                                                                }
-                                                            },
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px",
-                                                                "padding-left": "67px",
-                                                                "padding-right": "67px",
-                                                                "width": "100%",
-                                                                "font-size": "18px",
-                                                            },
-                                                            "quantityInput": {
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px"
-                                                            }
-                                                        },
-                                                        "contents": {
-                                                            "img": false,
-                                                            "title": false,
-                                                            "price": false
-                                                        },
-                                                        "text": {
-                                                            "button": "180ml ご購入はこちら"
-                                                        }
-                                                    },
-                                                    "productSet": {
-                                                        "styles": {
-                                                            "products": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "margin-left": "-20px"
-                                                                }
-                                                            }
-                                                        }
-                                                    },
-                                                    "modalProduct": {
-                                                        "contents": {
-                                                            "img": false,
-                                                            "imgWithCarousel": true,
-                                                            "button": false,
-                                                            "buttonWithQuantity": true
-                                                        },
-                                                        "styles": {
-                                                            "product": {
-                                                                "@media (min-width: 601px)": {
-                                                                    "max-width": "100%",
-                                                                    "margin-left": "0px",
-                                                                    "margin-bottom": "0px"
-                                                                }
-                                                            },
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px",
-                                                                "padding-left": "67px",
-                                                                "padding-right": "67px"
-                                                            },
-                                                            "quantityInput": {
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px"
-                                                            }
-                                                        },
-                                                        "text": {
-                                                            "button": "Add to cart"
-                                                        }
-                                                    },
-                                                    "option": {},
-                                                    "cart": {
-                                                        "styles": {
-                                                            "button": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "font-size": "14px",
-                                                                "padding-top": "15px",
-                                                                "padding-bottom": "15px",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "background-color": "#000000",
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                "border-radius": "0px"
-                                                            }
-                                                        },
-                                                        "text": {
-                                                            "title": "買い物かご",
-                                                            "total": "小計",
-                                                            "empty": "カートを空にする",
-                                                            "notice": "",
-                                                            "button": "購入する"
-                                                        }
-                                                    },
-                                                    "toggle": {
-                                                        "styles": {
-                                                            "toggle": {
-                                                                "font-family": "Times New Roman, serif",
-                                                                "background-color": "#000000",
-                                                                ":hover": {
-                                                                    "background-color": "#000000"
-                                                                },
-                                                                ":focus": {
-                                                                    "background-color": "#000000"
-                                                                }
-                                                            },
-                                                            "count": {
-                                                                "font-size": "14px"
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                            });
-                                        });
-                                    }
-                                })();
-                                /*]]>*/
-                            </script>
+                            <div class='product-component-180 js-shop-btn180'></div>
 
                         </div>
                     </div>
@@ -1409,5 +356,343 @@
 
     </main>
     <!-- /CONTAINER -->
-    <?php get_footer(); ?>
+
+
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function() {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'f43f0b-80.myshopify.com',
+                    storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
+                });
+
+                var productComponents = document.querySelectorAll('.product-component-720');
+                productComponents.forEach(function(node, index) {
+                    ShopifyBuy.UI.onReady(client).then(function(ui) {
+                        ui.createComponent('product', {
+                            id: '8520581644510',  // 商品IDを動的に変更する場合は、ここを配列やオブジェクトで管理できます。
+                            node: node,
+                            moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
+                            options: {
+                                "product": {
+                                    "styles": {
+                                        "product": {
+                                            "@media (min-width: 601px)": {
+                                                "max-width": "calc(25% - 20px)",
+                                                "margin-left": "20px",
+                                                "margin-bottom": "50px"
+                                            }
+                                        },
+                                        "button": {
+                                            "font-family": "Times New Roman, serif",
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            "background-color": "#000000",
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            },
+                                            "border-radius": "0px",
+                                            "padding-left": "67px",
+                                            "padding-right": "67px",
+                                            "width": "100%",
+                                            "font-size": "18px",
+                                        },
+                                        "quantityInput": {
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px"
+                                        }
+                                    },
+                                    "contents": {
+                                        "img": false,
+                                        "title": false,
+                                        "price": false
+                                    },
+                                    "text": {
+                                        "button": getButtonTextBasedOnUrl()
+                                    }
+                                },
+                                "cart": {
+                                    "styles": {
+                                        "button": {
+                                            "font-family": "Times New Roman, serif",
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            "background-color": "#000000",
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            },
+                                            "border-radius": "0px"
+                                        }
+                                    },
+                                    "text": {
+                                        "title": "Shopping Cart",
+                                        "total": "Subtotal",
+                                        "empty": "Empty cart",
+                                        "notice": "",
+                                        "button": "BUY"
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                        "toggle": {
+                                            "font-family": "Times New Roman, serif",
+                                            "background-color": "#000000",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            }
+                                        },
+                                        "count": {
+                                            "font-size": "14px"
+                                        }
+                                    }
+                                }
+                            },
+                        });
+                    });
+                });
+            }
+
+            function getButtonTextBasedOnUrl() {
+                var path = window.location.pathname;
+                if (path.includes('/en/')) {
+                    return "Click here to purchase 720ml";
+                } else if (path.includes('/cn/')) {
+                    return "点此购入 720ml";
+                } else if (path.includes('/ct/')) {
+                    return "點此購入 720ml";
+                } else {
+                    return "720ml ご購入はこちら";
+                }
+            }
+        })();
+        /*]]>*/
+    </script>
+
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function() {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'f43f0b-80.myshopify.com',
+                    storefrontAccessToken: 'de7496cac0cebbe4d3bedea4bd02458a',
+                });
+
+                var productComponents = document.querySelectorAll('.product-component-180');
+                productComponents.forEach(function(node) {
+                    ShopifyBuy.UI.onReady(client).then(function(ui) {
+                        ui.createComponent('product', {
+                            id: '8613730320606',  // 必要に応じてこのIDを変更
+                            node: node,
+                            moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
+                            options: {
+                                "product": {
+                                    "styles": {
+                                        "product": {
+                                            "@media (min-width: 601px)": {
+                                                "max-width": "calc(25% - 20px)",
+                                                "margin-left": "20px",
+                                                "margin-bottom": "50px"
+                                            }
+                                        },
+                                        "button": {
+                                            "font-family": "Times New Roman, serif",
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            "background-color": "#000000",
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            },
+                                            "border-radius": "0px",
+                                            "padding-left": "67px",
+                                            "padding-right": "67px",
+                                            "width": "100%",
+                                            "font-size": "18px",
+                                        },
+                                        "quantityInput": {
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px"
+                                        }
+                                    },
+                                    "contents": {
+                                        "img": false,
+                                        "title": false,
+                                        "price": false
+                                    },
+                                    "text": {
+                                        "button": getButtonTextBasedOnUrl()
+                                    }
+                                },
+                                "productSet": {
+                                    "styles": {
+                                        "products": {
+                                            "@media (min-width: 601px)": {
+                                                "margin-left": "-20px"
+                                            }
+                                        }
+                                    }
+                                },
+                                "modalProduct": {
+                                    "contents": {
+                                        "img": false,
+                                        "imgWithCarousel": true,
+                                        "button": false,
+                                        "buttonWithQuantity": true
+                                    },
+                                    "styles": {
+                                        "product": {
+                                            "@media (min-width: 601px)": {
+                                                "max-width": "100%",
+                                                "margin-left": "0px",
+                                                "margin-bottom": "0px"
+                                            }
+                                        },
+                                        "button": {
+                                            "font-family": "Times New Roman, serif",
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            "background-color": "#000000",
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            },
+                                            "border-radius": "0px",
+                                            "padding-left": "67px",
+                                            "padding-right": "67px"
+                                        },
+                                        "quantityInput": {
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px"
+                                        }
+                                    },
+                                    "text": {
+                                        "button": "Add to cart"
+                                    }
+                                },
+                                "option": {},
+                                "cart": {
+                                    "styles": {
+                                        "button": {
+                                            "font-family": "Times New Roman, serif",
+                                            "font-size": "14px",
+                                            "padding-top": "15px",
+                                            "padding-bottom": "15px",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            "background-color": "#000000",
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            },
+                                            "border-radius": "0px"
+                                        }
+                                    },
+                                    "text": {
+                                        "title": "Shopping Cart",
+                                        "total": "Subtotal",
+                                        "empty": "Empty cart",
+                                        "notice": "",
+                                        "button": "BUY"
+                                    }
+                                },
+                                "toggle": {
+                                    "styles": {
+                                        "toggle": {
+                                            "font-family": "Times New Roman, serif",
+                                            "background-color": "#000000",
+                                            ":hover": {
+                                                "background-color": "#000000"
+                                            },
+                                            ":focus": {
+                                                "background-color": "#000000"
+                                            }
+                                        },
+                                        "count": {
+                                            "font-size": "14px"
+                                        }
+                                    }
+                                }
+                            },
+                        });
+                    });
+                });
+            }
+
+            function getButtonTextBasedOnUrl() {
+                var path = window.location.pathname;
+                if (path.includes('/en/')) {
+                    return "Click here to purchase 180ml";
+                } else if (path.includes('/cn/')) {
+                    return "点此购入 180ml";
+                } else if (path.includes('/ct/')) {
+                    return "點此購入 180ml";
+                } else {
+                    return "180ml ご購入はこちら";
+                }
+            }
+        })();
+        /*]]>*/
+    </script>
+
+
 </div>
+<?php get_footer(); ?>
