@@ -10,7 +10,7 @@ $website = get_post_meta(get_the_ID(), '_shop_website', true);
 
 <!-- CONTAINER -->
 <main id="SINGLE"><!-- 最大幅 -->
-  <div class="article__ttl ffEn">
+  <div class="article__ttl">
     <p>取り扱い店舗様</p>
   </div>
   <section id="SINGLE-NEWS" class="singleShop">

@@ -1157,6 +1157,10 @@ HEADER
               a {
                 font-size: 1.8rem;
                 padding: 1px 1px;
+                &.ja {
+                  font-weight: bold;
+                  font-family: "游明朝", YuMincho, "Kozuka Mincho Pro", "Kozuka Mincho Std", "小塚明朝 Pro R", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+                }
               }
             }
           }
@@ -1203,9 +1207,15 @@ HEADER
           }
           &-link {
             margin-top: 21px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-inline: auto;
+            max-width: 320px;
             li {
+              margin-left: 0;
+              margin: 0 11px;
               a {
-                font-size: 1rem;
+                font-size: 1.1rem;
               }
             }
           }
@@ -1283,6 +1293,16 @@ HEADER
   .ft {
     background-size: auto;
   }
+}
+
+@media screen and (max-width: 375px) {
+  .ft_cnt-ma-lft-blk-bArea a.lineBtn:before {
+    left: 13px;
+  }
+  .ft_cnt-ma-lft-blk-bArea a.mlmgBtn:before {
+    left: 80px;
+  }
+  
 }
 
 /*----------------------------------------

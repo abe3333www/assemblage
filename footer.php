@@ -10,8 +10,8 @@
           <div class="ft_cnt-ma-lft-blk">
             <p class="ft_cnt-ma-lft-blk-ttl">商品のご注文</p>
             <div class="ft_cnt-ma-lft-blk-bArea">
-              <a href="" target="_blank">個人のお客様</a>
-              <a href="" target="_blank">飲食店関係者の皆様</a>
+              <a href="<?php echo esc_url(home_url()); ?>/toc">個人のお客様</a>
+              <a href="<?php echo esc_url(home_url()); ?>/tob">飲食店関係者の皆様</a>
             </div>
           </div>
           <div class="ft_cnt-ma-lft-blk">
@@ -19,7 +19,7 @@
             <div class="ft_cnt-ma-lft-blk-bArea fCol">
               <a class="lineBtn pc">Assemblage Club LINE公式アカウントはこちら</a>
               <a class="lineBtn sp">Assemblage Club公式LINE@はこちら</a>
-              <a class="mlmgBtn" href="" target="_blank">メールマガジン</a>
+              <!-- <a class="mlmgBtn" href="" target="_blank">メールマガジン</a> -->
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
             <li><a href="<?php echo esc_url(home_url()); ?>/news/">News</a></li>
           </ul>
           <ul class="ft_cnt-ma-rgt-list">
-            <li><a href="<?php echo esc_url(home_url()); ?>/cooperation/">協力酒造</a></li>
+            <li><a class="ja" href="<?php echo esc_url(home_url()); ?>/cooperation/">協力酒造</a></li>
             <li><a href="<?php echo esc_url(home_url()); ?>/faq/">FAQ</a></li>
             <li><a href="<?php echo esc_url(home_url()); ?>/contact/">Contact</a></li>
           </ul>
@@ -49,18 +49,18 @@
             <a href="https://nft.sakeworld.jp/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_logo2.svg" alt="Sake-world NFT"></a>
           </div>
           <ul class="ft_cnt-btm-flex-link">
-            <li><a href="https://assemblageclub.stores.jp/tokushoho" target="_blank">特定商法取引法に基づく表記</a></li>
-            <li><a href="https://assemblageclub.stores.jp/privacy_policy" target="_blank">プライバシーポリシー</a></li>
-            <li><a href="https://assemblageclub.stores.jp/terms" target="_blank">利⽤規約</a></li>
+            <li><a href="https://assemblageclub.myshopify.com/policies/legal-notice" target="_blank">特定商法取引法に基づく表記</a></li>
+            <li><a href="https://assemblageclub.myshopify.com/policies/privacy-policy" target="_blank">プライバシーポリシー</a></li>
+            <li><a href="https://assemblageclub.myshopify.com/policies/terms-of-service" target="_blank">利⽤規約</a></li>
             <li><a href="https://leafkyoto.co.jp/" target="_blank">会社概要</a></li>
           </ul>
         </div>
         <div class="ft_cnt-btm-sns">
           <p class="ft_cnt-btm-sns-ttl">Share</p>
           <ul class="ft_cnt-btm-sns-list">
-            <li><a href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_x.svg" alt="X"></a></li>
-            <li><a href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_insta.svg" alt="Instagram"></a></li>
-            <li><a href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_facebook.svg" alt="facebook"></a></li>
+            <li><a href="https://x.com/sakeworld_japan" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_x.svg" alt="X"></a></li>
+            <li><a href="https://www.instagram.com/sake.world.japan/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_insta.svg" alt="Instagram"></a></li>
+            <li><a href="https://www.facebook.com/sake.world.japan/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/ft_icon_facebook.svg" alt="facebook"></a></li>
           </ul>
         </div>
         <div class="ft_cnt-btm-tArea">

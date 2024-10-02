@@ -52,6 +52,7 @@
             else :
               ?>
             <?php endif; ?>
+            <div class="swiper-slide"></div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -130,7 +131,7 @@
                 </div>
               </div>
             </div>
-            <a class="topPr_btn linkbtn ffEn" href="<?php echo esc_url(home_url()); ?>/toc/">商品詳細はこちら</a>
+            <a class="topPr_btn linkbtn" href="<?php echo esc_url(home_url()); ?>/toc/">商品詳細はこちら</a>
           </div>
       <?php
         endwhile;

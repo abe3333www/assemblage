@@ -11,7 +11,7 @@
       $categories = get_terms(array(
         'taxonomy' => 'shoplist_cat',
         'orderby' => 'ID',
-        'hide_empty' => false, // 記事のないカテゴリも表示する
+        'hide_empty' => true, // 記事のないカテゴリも表示する
       ));
       foreach ($categories as $category) {
           echo '<li class="cat-item"><a href="#' . $category->slug . '">' . $category->name . '</a></li>';

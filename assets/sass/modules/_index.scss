@@ -684,6 +684,8 @@
                 align-items: flex-end;
             }
             .swiper-slide {
+                &:last-of-type {
+                }
                 @media screen and (min-width: 769px) {
                     &:first-of-type {
                         width: 35% !important;
@@ -775,6 +777,8 @@
                     line-height: 1.95;
                     letter-spacing: 0.07em;
                     font-feature-settings: "palt";
+                    position: relative;
+                    z-index: 10;
                 }
             }
             &-rgt {
@@ -2206,9 +2210,9 @@
                     width: calc(100% - 50px);
                 }
                 &-img {
-                    width: 77%;
                     padding-left: 0;
-                    margin-left: auto;
+                    margin-inline: auto;
+                    width: calc(100% - 50px);
                 }
             }
             &_blk2 {

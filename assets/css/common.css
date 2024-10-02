@@ -1419,6 +1419,10 @@ HEADER
     font-size: 1.8rem;
     padding: 1px 1px;
   }
+  .ft_cnt-ma-rgt-list li a.ja {
+    font-weight: bold;
+    font-family: "游明朝", YuMincho, "Kozuka Mincho Pro", "Kozuka Mincho Std", "小塚明朝 Pro R", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+  }
   .ft_cnt-ma-totop {
     position: absolute;
     bottom: 15px;
@@ -1466,9 +1470,20 @@ HEADER
   }
   .ft_cnt-btm-flex-link {
     margin-top: 21px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-inline: auto;
+    max-width: 320px;
+  }
+  .ft_cnt-btm-flex-link li {
+    margin-left: 0;
+    margin: 0 11px;
   }
   .ft_cnt-btm-flex-link li a {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .ft_cnt-btm-sns {
     position: relative;
@@ -1550,6 +1565,14 @@ HEADER
 @media screen and (max-width: 414px) {
   .ft {
     background-size: auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .ft_cnt-ma-lft-blk-bArea a.lineBtn:before {
+    left: 13px;
+  }
+  .ft_cnt-ma-lft-blk-bArea a.mlmgBtn:before {
+    left: 80px;
   }
 }
 /*----------------------------------------

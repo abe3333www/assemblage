@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
 const topMaSwiper = new Swiper('.js-topMaSwiper', {
 	// オプション
-	loop: true,
+	loop: false,
 	slidesPerView: 1.1,
 	centeredSlides: false,
 	spaceBetween: 0,
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		navBg.classList.remove('on');
 		logo.classList.remove('on');
 
-		updateLogoImage();
+		// updateLogoImage();
 
 	});
 
