@@ -390,7 +390,7 @@
                 productComponents.forEach(function(node, index) {
                     ShopifyBuy.UI.onReady(client).then(function(ui) {
                         ui.createComponent('product', {
-                            id: '8520581644510',  // 商品IDを動的に変更する場合は、ここを配列やオブジェクトで管理できます。
+                            id: '8708068868318',  // 商品IDを動的に変更する場合は、ここを配列やオブジェクトで管理できます。
                             node: node,
                             moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
                             options: {
@@ -532,7 +532,7 @@
                 productComponents.forEach(function(node) {
                     ShopifyBuy.UI.onReady(client).then(function(ui) {
                         ui.createComponent('product', {
-                            id: '8613730320606',  // 必要に応じてこのIDを変更
+                            id: '8708521230558',  // 必要に応じてこのIDを変更
                             node: node,
                             moneyFormat: '%C2%A5%7B%7Bamount_no_decimals%7D%7D',
                             options: {
