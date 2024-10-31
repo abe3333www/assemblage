@@ -13,7 +13,7 @@
                         <p class="form_end">リーフ・パブリケーションズ Assemblage Clubへの<br class="sp">お問い合わせありがとうございました。<br>後日、担当者よりご連絡いたしますので<br class="sp">今しばらくお待ちくださいませ。</p>
                     </div>
                     <div class="tob__area--ctt--cnt--fArea">
-                        <div class="form__btn"> <a href="<?php echo site_url(); ?>/tob/">TOPへ戻る</a> <svg class="btnSvg" width="20" height="16.057" viewBox="0 0 20 16.057"> <path id="パス_661" data-name="パス 661" d="M8.035,3.417v0l0,10.141L2.62,16.888ZM8.038,0,0,19.993l8.031-4.936L16.057,20Z" transform="translate(20) rotate(90)" fill="#fff"></path> </svg><p></p></div>
+                        <div class="form__btn"> <a href="<?php echo site_url(); ?>/original/">TOPへ戻る</a> <svg class="btnSvg" width="20" height="16.057" viewBox="0 0 20 16.057"> <path id="パス_661" data-name="パス 661" d="M8.035,3.417v0l0,10.141L2.62,16.888ZM8.038,0,0,19.993l8.031-4.936L16.057,20Z" transform="translate(20) rotate(90)" fill="#fff"></path> </svg><p></p></div>
                     </div>
                 </div>
             </section>

@@ -131,7 +131,7 @@
                 </div>
               </div>
             </div>
-            <a class="topPr_btn linkbtn" href="<?php echo esc_url(home_url()); ?>/toc/">商品詳細はこちら</a>
+            <a class="topPr_btn linkbtn" href="<?php echo esc_url(home_url()); ?>/tarodash/">商品詳細はこちら</a>
           </div>
       <?php
         endwhile;
@@ -221,8 +221,8 @@
             <div class="topHis_blk3-img">
               <div class="thumb">
                 <p class="animeBox">
-                  <img class="ivo smoothly pc" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/his_img3.jpg" alt="History　画像" width="960" height="540">
-                  <img class="ivo smoothly sp" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/his_img3_sp.jpg" alt="History　画像" width="364" height="540">
+                  <img class="pc" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/his_img3.png" alt="History　画像" >
+                  <img class="sp" data-animate="zoomOut" data-delay="0" data-duration="0" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/top/his_img3_sp.png" alt="History　画像">
                 </p>
               </div>
             </div>
@@ -261,7 +261,7 @@
       </div>
       <div class="topRes_btnArea">
         <a class="linkbtn -wht" href="https://assemblageclub.stores.jp/" target="_blank">飲食店様向け販売ページはこちら</a>
-        <a class="linkbtn" href="<?php echo esc_url(home_url());?>/tob/">オリジナル日本酒の制作はこちら</a>
+        <a class="linkbtn" href="<?php echo esc_url(home_url());?>/original/">オリジナル日本酒の制作はこちら</a>
       </div>
     </section>
     <section id="TOP-HISTORY" class="topCol">

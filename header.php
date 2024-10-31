@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
 
-  <?php if (is_page('tob') || is_page('confirm') || is_page('complete')) : ?>
+  <?php if (is_page('original') || is_page('confirm') || is_page('complete')) : ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1051779664"></script>
     <script>
@@ -59,13 +59,13 @@
       <body class="">
       <?php endif; ?>
       <!-- デフォルトのヘッダーは、toBページでは表示しない -->
-      <?php if (!is_page('tob')) : ?>
+      <?php if (!is_page('original')) : ?>
         <div class="addLine lineBtn">
           <a href="https://line.me/R/ti/p/@872qnsdk#~" target="_blank">Assemblage Club LINE公式アカウントはこちら</a>
         </div>
         <!-- HEADER -->
         <header class="hd ffEn">
-          <?php if (!is_page('toc')) : ?>
+          <?php if (!is_page('tarodash')) : ?>
             <div class="hd__wrap pc">
               <a class="hd__logo hdTc__logo " href="<?php echo site_url(); ?>">
                 <p class="hd__logo--icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo_cmn_hd_wht.png" alt="Assemblage Club"></p>
@@ -118,7 +118,7 @@
               </nav>
             </header>
             
-        <?php if (!is_page('toc')) : ?>
+        <?php if (!is_page('tarodash')) : ?>
           <!-- //HEADER -->
           <div id="language-switcher" class="language-switcher pc"><?php echo do_shortcode('[language-switcher]'); ?></div>
 
@@ -142,7 +142,7 @@
 
 
       <!-- toBページの場合、このヘッダーを表示 -->
-      <?php if (is_page('tob') || is_page('confirm') || is_page('complete')) : ?>
+      <?php if (is_page('original') || is_page('confirm') || is_page('complete')) : ?>
         <!-- HEADER -->
         <header class="hdTb">
           <div class="hdTb__wrap">
@@ -151,7 +151,7 @@
               <span></span>
               <span></span>
             </button>
-            <a class="hdTb__logo" href="<?php echo site_url(); ?>/tob/">
+            <a class="hdTb__logo" href="<?php echo site_url(); ?>/original/">
               <img class="pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/tob/logo.svg" alt="Assemblage Club">
               <img class="sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/tob/logo_sp.svg" alt="Assemblage Club">
             </a>
@@ -185,7 +185,7 @@
 
 
       <!-- toCページの場合、このヘッダーを表示 -->
-      <?php if (is_page('toc')) : ?>
+      <?php if (is_page('tarodash')) : ?>
         <!-- HEADER -->
         <header class="hdTc js-nav">
           <nav class="">

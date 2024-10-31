@@ -1,4 +1,4 @@
-<?php if (!is_page('tob')) : ?>
+<?php if (!is_page('original')) : ?>
   <!-- FOOTER -->
   <footer class="ft">
     <div class="ft_cnt">
@@ -10,8 +10,8 @@
           <div class="ft_cnt-ma-lft-blk">
             <p class="ft_cnt-ma-lft-blk-ttl">商品のご注文</p>
             <div class="ft_cnt-ma-lft-blk-bArea">
-              <a href="<?php echo esc_url(home_url()); ?>/toc">個人のお客様</a>
-              <a href="<?php echo esc_url(home_url()); ?>/tob">飲食店関係者の皆様</a>
+              <a href="<?php echo esc_url(home_url()); ?>/tarodash">個人のお客様</a>
+              <a href="<?php echo esc_url(home_url()); ?>/original">飲食店関係者の皆様</a>
             </div>
           </div>
           <div class="ft_cnt-ma-lft-blk">
@@ -122,10 +122,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js" charset="utf-8"></script>
 
-<?php if (is_page('tob')) : ?>
+<?php if (is_page('original')) : ?>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/tob.js" charset="utf-8"></script>
 <?php endif; ?>
-<?php if (is_page('toc')) : ?>
+<?php if (is_page('tarodash')) : ?>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/toc.js" charset="utf-8"></script>
 <?php endif; ?>
 
