@@ -638,6 +638,9 @@
 .topMv__wrap {
   background: #fff;
 }
+.topMv__wrap video {
+  width: 100%;
+}
 .topMv__cnt {
   position: relative;
   display: -webkit-box;

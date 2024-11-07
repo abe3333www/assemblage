@@ -50,7 +50,7 @@
 
   <body class="withMV">
 
-  <div class="navComBg js-navCmnBg sp"></div>
+    <div class="navComBg js-navCmnBg sp"></div>
   <?php elseif (is_page('product') || page_is_ancestor_of('product')) : ?>
 
     <body class="withMVwht">
@@ -75,10 +75,16 @@
                 <ul class="hd__nav--ul">
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/">Top</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-PRODUCTS">Products</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if (!is_front_page()) {
+                                                                                echo site_url();
+                                                                              } ?>#TOP-ABOUT">About</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if (!is_front_page()) {
+                                                                                echo site_url();
+                                                                              } ?>#TOP-PRODUCTS">Products</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/news/">News</a></li>
-                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
+                  <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php if (!is_front_page()) {
+                                                                                echo site_url();
+                                                                              } ?>#TOP-HISTORY">History</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
                   <li class="hd__nav--li"><a class="hd__nav--li--link" href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
                 </ul>
@@ -98,32 +104,43 @@
           <?php endif; ?>
         </header>
 
-        <header class="hdCmn sp js-navCom">
-              <nav class="">
-                <div class="hdCmn__close js-closeCom">
-                  <span></span>
-                  <span></span>
-                </div>
-                <ul>
-                  <li id="language-switcher" class="liSw sp"><?php echo do_shortcode('[language-switcher]'); ?></li>
-                  <li><a href="<?php echo site_url(); ?>/">Top</a></li>
-                  <li><a href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
-                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-ABOUT">About</a></li>
-                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-PRODUCTS">Products</a></li>
-                  <li><a href="<?php echo site_url(); ?>/news/">News</a></li>
-                  <li><a href="<?php if(!is_front_page()) { echo site_url(); } ?>#TOP-HISTORY">History</a></li>
-                  <li><a href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
-                  <li><a href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
-                </ul>
-              </nav>
-            </header>
-            
-        <?php if (!is_page('tarodash')) : ?>
-          <!-- //HEADER -->
-          <div id="language-switcher" class="language-switcher pc"><?php echo do_shortcode('[language-switcher]'); ?></div>
+        <header class="hdCmn hdCmn_language-switcher sp js-navCom">
+          <nav class="">
+            <div class="hdCmn__close js-closeCom">
+              <span></span>
+              <span></span>
+            </div>
+            <ul>
+              <li id="language-switcher" class="liSw sp"><?php echo do_shortcode('[language-switcher]'); ?></li>
+              <li><a href="<?php echo site_url(); ?>/">Top</a></li>
+              <li><a href="<?php echo site_url(); ?>/magazine">Magazine</a></li>
+              <li><a href="<?php if (!is_front_page()) {
+                              echo site_url();
+                            } ?>#TOP-ABOUT">About</a></li>
+              <li><a href="<?php if (!is_front_page()) {
+                              echo site_url();
+                            } ?>#TOP-PRODUCTS">Products</a></li>
+              <li><a href="<?php echo site_url(); ?>/news/">News</a></li>
+              <li><a href="<?php if (!is_front_page()) {
+                              echo site_url();
+                            } ?>#TOP-HISTORY">History</a></li>
+              <li><a href="<?php echo site_url(); ?>/shoplist/">Shop list</a></li>
+              <li><a href="<?php echo site_url(); ?>/faq/">FAQ</a></li>
+              <li>
+                <!-- <div id="language-switcher" class="language-switcher sp"><?php echo do_shortcode('[language-switcher]'); ?></div> -->
+              </li>
+            </ul>
+          </nav>
+        </header>
 
-          <?php if (is_front_page()) : ?><div class="fixedShop js-fixProducts"> <a href="#TOP-PRODUCTS">Products</a></div><?php endif; ?>
-        <?php endif; ?>
+        <div class="hdCmn_language-switcher">
+          <?php if (!is_page('tarodash')) : ?>
+            <!-- //HEADER -->
+            <div id="language-switcher" class="language-switcher pc"><?php echo do_shortcode('[language-switcher]'); ?></div>
+
+            <?php if (is_front_page()) : ?><div class="fixedShop js-fixProducts"> <a href="#TOP-PRODUCTS">Products</a></div><?php endif; ?>
+          <?php endif; ?>
+        </div>
 
       <?php endif; ?>
       <section id="LINE-ADD" class="lineAdd">

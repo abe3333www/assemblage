@@ -1,18 +1,18 @@
 /* ==========================
 common 
 ========================== */
-$(function(){
-	$('.ivo').on('inview', function() {
-			var delay = $(this).data('delay') ? $(this).data('delay') : 0;
-			var duration = $(this).data('duration') ? $(this).data('duration') : 0;
-			$(this).css('visibility', 'visible');
-			$(this).addClass($(this).data('animate'));
-			if( delay > 0 ){
-			  $(this).css('animation-delay', delay+ 's');
-			}
-			if( duration > 0 ){
-			  $(this).css('animation-duration', transiton+ 's');
-			}
+$(function () {
+	$('.ivo').on('inview', function () {
+		var delay = $(this).data('delay') ? $(this).data('delay') : 0;
+		var duration = $(this).data('duration') ? $(this).data('duration') : 0;
+		$(this).css('visibility', 'visible');
+		$(this).addClass($(this).data('animate'));
+		if (delay > 0) {
+			$(this).css('animation-delay', delay + 's');
+		}
+		if (duration > 0) {
+			$(this).css('animation-duration', transiton + 's');
+		}
 	});
 });
 
@@ -21,16 +21,16 @@ header
 ========================== */
 //hamburger
 $(function () {
-	$('.humBtn').on('click', function() {
-	    $(this).toggleClass('open');
-	    $('.hd').toggleClass('open');
-	    $(this).next().slideToggle();
+	$('.humBtn').on('click', function () {
+		$(this).toggleClass('open');
+		$('.hd').toggleClass('open');
+		$(this).next().slideToggle();
 	});
 });
 //header bg
 // $(function () {
 // 	setTimeout(function(){
-		
+
 // 		if($('section').hasClass('withMV__trigger')){
 // 			var hdLogoIcon = $('.hd__logo--icon img');
 // 			// var loginIcon = $('.login__icon');
@@ -39,7 +39,7 @@ $(function () {
 // 			// var checkIconWht = loginIcon.attr('src').replace('blk.svg' , 'wht.svg');
 // 			// var checkIconBlk = loginIcon.attr('src').replace('wht.svg' , 'blk.svg');
 
-			
+
 // 			//hamburger
 // 			$('.humBtn').on('click', function() {
 // 				if ($(this).hasClass("open")) {
@@ -78,16 +78,16 @@ $(function () {
 // 			});
 // 		}
 // 	},500);
-	
+
 // });
 $(function () {
-	if($('section').hasClass('withMVwht__trigger')){
-		headerH   = $('.hd').height();
+	if ($('section').hasClass('withMVwht__trigger')) {
+		headerH = $('.hd').height();
 		toriggerH = $('.withMVwht__trigger').height();
 		targetPos = toriggerH - headerH;
-		$(window).on("scroll", function() {
-			scrollPosition = $(window).scrollTop() ;
-			if (scrollPosition > targetPos  ) {
+		$(window).on("scroll", function () {
+			scrollPosition = $(window).scrollTop();
+			if (scrollPosition > targetPos) {
 				$('body').removeClass('withMVwht');
 			} else {
 				$('body').addClass('withMVwht');
@@ -97,10 +97,10 @@ $(function () {
 });
 //line modal
 $(function () {
-	$('.lineBtn').on('click', function() {
+	$('.lineBtn').on('click', function () {
 		$('.lineAdd').fadeIn();
 	});
-	$('.lineAdd__bg').on('click', function() {
+	$('.lineAdd__bg').on('click', function () {
 		$('.lineAdd').fadeOut();
 	});
 });
@@ -109,49 +109,60 @@ $(function () {
 scroll 
 ============================== */
 $(function () {
-	$('a[href^="#"]').on('click', function() {
-	  var href = $(this).attr('href');
-	  var target = $(href == '#' || href == '' ? 'html' : href);
-	  var targetPos = target.offset().top;
-	  var startPos = $(window).scrollTop();
-		  var endPos = targetPos;
-	  
-		  if ($(window).width() > 768) {
-			  endPos -= 150;
-		  } else {
-			  endPos -= 75;
-		  }
-	  
-	  $('html, body').animate({scrollTop:endPos}, 500, 'swing');
-	  return false;
-	});
+    $('a[href^="#"]').on('click', function () {
+        var href = $(this).attr('href');
+        var target = $(href === '#' || href === '' ? 'html' : href);
+        var targetPos = target.offset().top;
+        var startPos = $(window).scrollTop();
+        var endPos = targetPos;
+
+        // hdTcクラス内のリンクをクリックした場合の高さ設定
+        if ($(this).closest('.hdTc').length > 0) {
+            if ($(window).width() > 768) {
+                endPos -= 60; // PCの場合の特定の高さ（例: 200px）
+            } else {
+                endPos -= 50; // モバイルの場合の特定の高さ（例: 100px）
+            }
+        } else {
+            // 通常の高さ設定
+            if ($(window).width() > 768) {
+                endPos -= 150;
+            } else {
+                endPos -= 75;
+            }
+        }
+
+        $('html, body').animate({ scrollTop: endPos }, 500, 'swing');
+        return false;
+    });
 });
+
 
 /* ==============================
 TOP 
 ============================== */
 $(function () {
 	var swiper = new Swiper(".topSlide", {
-		loop:true,
-        effect: "fade",
-		speed:1000,
-        autoplay: {
+		loop: true,
+		effect: "fade",
+		speed: 1000,
+		autoplay: {
 			delay: 4000,
 			disableOnInteraction: false,
 		},
 		pagination: {
 			el: ".swiper-pagination",
 		},
-  	});
-	$('#COLUMN01-MORE').on('click', function() {
+	});
+	$('#COLUMN01-MORE').on('click', function () {
 		$(this).toggleClass('open');
 		$('#COLUMN01-WRAP').slideToggle();
 	});
-	$('#COLUMN02-MORE').on('click', function() {
+	$('#COLUMN02-MORE').on('click', function () {
 		$(this).toggleClass('open');
 		$('#COLUMN02-WRAP').slideToggle();
 	});
-	$('#COLUMN03-MORE').on('click', function() {
+	$('#COLUMN03-MORE').on('click', function () {
 		$(this).toggleClass('open');
 		$('#COLUMN03-WRAP').slideToggle();
 	});
@@ -163,9 +174,9 @@ $(function () {
 FAQ 
 ========================== */
 $(function () {
-	$('.pageFaq__blk--question').on('click', function() {
-	    $(this).toggleClass('open');
-	    $(this).next().slideToggle();
+	$('.pageFaq__blk--question').on('click', function () {
+		$(this).toggleClass('open');
+		$(this).next().slideToggle();
 	});
 });
 
@@ -174,9 +185,9 @@ pageProductDetail
 ============================== */
 
 $(function () {
-	$('.pageProductDetail__btnArea--acd--head.js-acd').on('click', function() {
-	    $(this).toggleClass('open');
-	    $(this).nextAll().slideToggle();
+	$('.pageProductDetail__btnArea--acd--head.js-acd').on('click', function () {
+		$(this).toggleClass('open');
+		$(this).nextAll().slideToggle();
 	});
 });
 
@@ -184,56 +195,56 @@ $(function () {
 
 
 // TOP 固定ボタン（Products）
-document.addEventListener('DOMContentLoaded', function() {
-    // 要素を取得
-    var fixedShop = document.querySelector('.js-fixProducts');
-    var footer = document.querySelector('footer');
+document.addEventListener('DOMContentLoaded', function () {
+	// 要素を取得
+	var fixedShop = document.querySelector('.js-fixProducts');
+	var footer = document.querySelector('footer');
 
-    // スクロールイベントを追加
-    window.addEventListener('scroll', function() {
-        // フッターの位置を取得
-        var footerRect = footer.getBoundingClientRect();
-        var windowHeight = window.innerHeight;
+	// スクロールイベントを追加
+	window.addEventListener('scroll', function () {
+		// フッターの位置を取得
+		var footerRect = footer.getBoundingClientRect();
+		var windowHeight = window.innerHeight;
 
-        // フッターが画面に入ったかをチェック
-        if (footerRect.top < windowHeight && footerRect.bottom >= 0) {
-            fixedShop.classList.add('off');
-        } else {
-            fixedShop.classList.remove('off');
-        }
-    });
+		// フッターが画面に入ったかをチェック
+		if (footerRect.top < windowHeight && footerRect.bottom >= 0) {
+			fixedShop.classList.add('off');
+		} else {
+			fixedShop.classList.remove('off');
+		}
+	});
 });
 
 // TOP Magazine スライダー
-document.addEventListener('DOMContentLoaded', function() {
-const topMaSwiper = new Swiper('.js-topMaSwiper', {
-	// オプション
-	loop: false,
-	slidesPerView: 1.1,
-	centeredSlides: false,
-	spaceBetween: 0,
-	speed: 1000,
-	// autoHeight: true,
-	// effect: "fade",
-	// autoplay: {
-	//   disableOnInteraction: false,
-	// },
+document.addEventListener('DOMContentLoaded', function () {
+	const topMaSwiper = new Swiper('.js-topMaSwiper', {
+		// オプション
+		loop: false,
+		slidesPerView: 1.1,
+		centeredSlides: false,
+		spaceBetween: 0,
+		speed: 1000,
+		// autoHeight: true,
+		// effect: "fade",
+		// autoplay: {
+		//   disableOnInteraction: false,
+		// },
 
-	// ページネーション
-	pagination: {
-	  el: '.swiper-pagination',
-	  clickable: true,
-	  type: "progressbar",
-	},
+		// ページネーション
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			type: "progressbar",
+		},
 
-	// ブレイクポイント
-	breakpoints: {
-	  // 769px以上の場合
-	  500: {
-		slidesPerView: 3.3,
-	  },
-	},
-  });
+		// ブレイクポイント
+		breakpoints: {
+			// 769px以上の場合
+			500: {
+				slidesPerView: 3.3,
+			},
+		},
+	});
 });
 
 
@@ -260,14 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	function updateLogoImage() {
-        const currentSrc = logoImg.src;
-        const basePath = currentSrc.substring(0, currentSrc.lastIndexOf('/') + 1); // ベースパスを取得
-        if (logo.classList.contains('on')) {
-            logoImg.src = basePath + newLogoName;
-        } else {
-            logoImg.src = basePath + originalLogoName;
-        }
-    }
+		const currentSrc = logoImg.src;
+		const basePath = currentSrc.substring(0, currentSrc.lastIndexOf('/') + 1); // ベースパスを取得
+		if (logo.classList.contains('on')) {
+			logoImg.src = basePath + newLogoName;
+		} else {
+			logoImg.src = basePath + originalLogoName;
+		}
+	}
 
 	// ハンバーガー押した時
 	menuButton.addEventListener('click', function () {
@@ -313,3 +324,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+// language-switcher スライドトグル
+// document.addEventListener('DOMContentLoaded', function() {
+// 	const currentLang = document.querySelector('.trp-ls-shortcode-current-language a');
+// 	const languageList = document.querySelector('.trp-ls-shortcode-language');
+	
+// 	if (currentLang && languageList) {
+// 	  currentLang.addEventListener('click', function() {
+// 		// 「on」クラスの付与・削除をトグル
+// 		languageList.classList.toggle('on');
+// 	  });
+// 	}
+//   });
+  

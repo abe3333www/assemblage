@@ -274,7 +274,7 @@ HEADER
   mix-blend-mode: difference;
   z-index: 500;
   * {
-    color: #FFF!important;
+    color: #fff !important;
   }
   &__wrap {
     display: block;
@@ -348,9 +348,9 @@ HEADER
   right: 50px;
   z-index: 10;
   mix-blend-mode: difference;
-  color: #FFF!important;
+  color: #fff !important;
   * {
-    color: #FFF!important;
+    color: #fff !important;
   }
 }
 .fixedShop {
@@ -1159,7 +1159,9 @@ HEADER
                 padding: 1px 1px;
                 &.ja {
                   font-weight: bold;
-                  font-family: "游明朝", YuMincho, "Kozuka Mincho Pro", "Kozuka Mincho Std", "小塚明朝 Pro R", "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
+                  font-family: "游明朝", YuMincho, "Kozuka Mincho Pro", "Kozuka Mincho Std", "小塚明朝 Pro R",
+                    "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E",
+                    "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Sawarabi Mincho", serif;
                 }
               }
             }
@@ -1302,7 +1304,6 @@ HEADER
   .ft_cnt-ma-lft-blk-bArea a.mlmgBtn:before {
     left: 80px;
   }
-  
 }
 
 /*----------------------------------------
@@ -1565,7 +1566,7 @@ HEADER
           width: 10px;
           height: 10px;
         }
-        >a {
+        > a {
           padding-top: 15px;
         }
       }
@@ -1578,12 +1579,12 @@ HEADER
         &::after {
           top: 5px;
         }
-        >a {
+        > a {
           padding-top: 15px;
         }
       }
       &--next {
-        >a {
+        > a {
           padding-top: 15px;
         }
       }
@@ -1658,6 +1659,86 @@ HEADER
   display: flex !important;
 }
 
+// .hdCmn_language-switcher {
+//   // language-switcher 改修用の修正
+//   .language-switcher {
+//     width: 30px;
+//   }
+//   .trp-ls-shortcode-current-language {
+//     display: block !important;
+//   }
+//   .trp-ls-shortcode-current-language a {
+//     position: relative;
+//     &:hover {
+//       opacity: 1 !important;
+//     }
+//     &:before {
+//       position: absolute;
+//       content: "";
+//       width: 10px;
+//       height: 8px;
+//       top: 50%;
+//       right: -17px;
+//       transform: translateY(-50%);
+//       clip-path: polygon(50% 100%, 0 0, 100% 0);
+//       background-color: #fff;
+//     }
+//   }
+//   .trp-language-switcher {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .trp-language-switcher > div {
+//     width: 30px !important;
+//   }
+//   .trp-language-switcher > div > a:not(:first-of-type)::before {
+//     display: none !important;
+//   }
+//   .trp-ls-shortcode-language {
+//     display: flex !important;
+//     flex-direction: column;
+//     display: none !important;
+//   }
+//   .trp-ls-shortcode-disabled-language.trp-ls-disabled-language {
+//     text-decoration: none !important;
+//   }
+
+//   @media only screen and (max-width: 834px) {
+//     .language-switcher {
+//       width: auto !important;
+//       position: relative;
+//       top: unset;
+//       right: unset;
+//     }
+//     .trp-ls-shortcode-current-language {
+//       display: none !important;
+//     }
+//     .trp-ls-shortcode-current-language a {
+//       &:hover {
+//       }
+//       &:before {
+//         display: none;
+//       }
+//     }
+//     .trp-language-switcher {
+//       flex-direction: row !important;
+//     }
+//     .trp-language-switcher > div {
+//       width: auto !important;
+//     }
+//     .trp-language-switcher > div > a:not(:first-of-type)::before {
+//     }
+//     .trp-ls-shortcode-language {
+//       display: block !important;
+//     }
+//     .trp-ls-shortcode-disabled-language.trp-ls-disabled-language {
+//       text-decoration: underline !important;
+//       &:first-of-type {
+//         display: none !important;
+//       }
+//     }
+//   }
+// }
 
 .withMV .hd a {
   // color: #000 !important;
@@ -1869,6 +1950,3 @@ HEADER
     }
   }
 }
-
-
-

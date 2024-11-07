@@ -661,7 +661,7 @@ HEADER
   z-index: 500;
 }
 .hd * {
-  color: #FFF !important;
+  color: #fff !important;
 }
 .hd__wrap {
   display: block;
@@ -734,10 +734,10 @@ HEADER
   right: 50px;
   z-index: 10;
   mix-blend-mode: difference;
-  color: #FFF !important;
+  color: #fff !important;
 }
 .language-switcher * {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
 .fixedShop {

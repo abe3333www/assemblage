@@ -112,7 +112,7 @@ $(function () {
 	//現在地を取得するための設定を関数でまとめる
 	function PositionCheckTrend() {
 
-		var hd = $("header").outerHeight(true);
+		var hd = $("header.hdTc").outerHeight(true);
 
 		$(".scroll-point").each(function (i) {
 			elem[i] = Math.round(parseInt($(this).offset().top - hd - 0));
@@ -123,13 +123,14 @@ $(function () {
 	function ScrollAnimeTrend() {
 		var scroll = Math.round($(window).scrollTop());
 
-		var nav = $("header li");
-		$("header li").removeClass('on');
+		var nav = $("header.hdTc li");
+		$("header.hdTc li").removeClass('on');
 		if (scroll >= 0 && scroll < elem[0]) {
 
 		}
 		else if (scroll >= elem[0] && scroll < elem[1]) {
 			$(nav[1]).addClass('on');
+			console.log('a');
 		}
 		else if (scroll >= elem[1] && scroll < elem[2]) {
 			$(nav[2]).addClass('on');

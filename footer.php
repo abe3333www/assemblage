@@ -122,6 +122,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js" charset="utf-8"></script>
 
+
 <?php if (is_page('original')) : ?>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/tob.js" charset="utf-8"></script>
 <?php endif; ?>

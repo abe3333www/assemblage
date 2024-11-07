@@ -10,6 +10,9 @@
         position: relative;
         &__wrap {
             background: #fff;
+            video {
+                width: 100%;
+            }
         }
         &__cnt {
             position: relative;

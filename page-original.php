@@ -60,7 +60,32 @@
                 <li><a href="#sec04">Schedule</a></li>
                 <li><a href="#sec05">FAQ</a></li>
                 <li><a href="#sec06">Contact</a></li>
-                <li id="language-switcher"><?php echo do_shortcode('[language-switcher]'); ?></li>
+                <!-- <li id="language-switcher"><?php echo do_shortcode('[language-switcher]'); ?></li> -->
+                <li id="language-switcher">
+                    <div class="trp_language_switcher_shortcode">
+                        <div class="trp-language-switcher trp-language-switcher-container" data-no-translation="">
+                            <div class="trp-ls-shortcode-current-language" style="width: 125px;"> <a href="#" class="trp-ls-shortcode-disabled-language trp-ls-disabled-language" title="日本語" onclick="event.preventDefault()"> JP </a></div>
+                            <div class="trp-ls-shortcode-language" style="width: 125px; display: none;"> <a href="#" class="trp-ls-shortcode-disabled-language trp-ls-disabled-language" title="日本語" onclick="event.preventDefault()"> JP </a> <a href="https://sakeworld.jp/abc/cn/tob/" title="简体中文"> CN </a> <a href="https://sakeworld.jp/abc/ct/tob/" title="香港中文"> CT </a> <a href="https://sakeworld.jp/abc/en/tob/" title="English"> EN </a></div>
+                            <script type="application/javascript">
+                                // need to have the same with set from JS on both divs. Otherwise it can push stuff around in HTML
+                                var trp_ls_shortcodes = document.querySelectorAll('.trp_language_switcher_shortcode .trp-language-switcher');
+                                if (trp_ls_shortcodes.length > 0) {
+                                    // get the last language switcher added
+                                    var trp_el = trp_ls_shortcodes[trp_ls_shortcodes.length - 1];
+
+                                    var trp_shortcode_language_item = trp_el.querySelector('.trp-ls-shortcode-language')
+                                    // set width
+                                    var trp_ls_shortcode_width = trp_shortcode_language_item.offsetWidth + 16;
+                                    trp_shortcode_language_item.style.width = trp_ls_shortcode_width + 'px';
+                                    trp_el.querySelector('.trp-ls-shortcode-current-language').style.width = trp_ls_shortcode_width + 'px';
+
+                                    // We're putting this on display: none after we have its width.
+                                    trp_shortcode_language_item.style.display = 'none';
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
 
